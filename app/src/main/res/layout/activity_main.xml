@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/C_01"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.aged.supercal.MainActivity">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:id="@+id/table_1"
+            android:layout_width="wrap_content"
+            android:layout_height="128dp"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/textView_1"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:background="#4b423d"
+                android:text="计算器" />
+
+            <TextView
+                android:id="@+id/textView_2"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:background="#564d44"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textView_3"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:background="#5a5148"
+                android:text="@string/textview" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/table_2"
+            android:layout_width="wrap_content"
+            android:layout_height="128dp"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/textView_4"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:background="#564d44"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textView_5"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:background="#5a5148"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textView_6"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:background="#4b423d"
+                android:text="TextView" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/table_3"
+            android:layout_width="wrap_content"
+            android:layout_height="128dp"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/textView_7"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:background="#5a5148"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textView_8"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:background="#4b423d"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textView_9"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:background="#564d44"
+                android:text="TextView" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/table_4"
+            android:layout_width="129dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView_10"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:background="#4b423d"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textView_11"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:background="#564d44"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textView_12"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:background="#5a5148"
+                android:text="TextView" />
+        </TableRow>
+    </TableLayout>
+</android.support.constraint.ConstraintLayout>

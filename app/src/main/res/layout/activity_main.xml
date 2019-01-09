@@ -120,10 +120,10 @@
                 android:layout_width="128dp"
                 android:layout_height="match_parent"
                 android:background="#5a5148"
-                android:drawableTop="@mipmap/ic_launcher"
+                android:drawableTop="@mipmap/ph_yws"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="汇率计算"
+                android:text="意外所得"
                 android:textAlignment="center"
                 android:textColor="@android:color/white" />
 
@@ -132,10 +132,10 @@
                 android:layout_width="128dp"
                 android:layout_height="match_parent"
                 android:background="#4b423d"
-                android:drawableTop="@mipmap/ic_launcher"
+                android:drawableTop="@mipmap/ph_ccz"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="TextView"
+                android:text="财产转让"
                 android:textAlignment="center"
                 android:textColor="@android:color/white" />
 
@@ -144,10 +144,10 @@
                 android:layout_width="128dp"
                 android:layout_height="match_parent"
                 android:background="#564d44"
-                android:drawableTop="@mipmap/ic_launcher"
+                android:drawableTop="@mipmap/ph_gtg"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="TextView"
+                android:text="个体工商经营"
                 android:textAlignment="center"
                 android:textColor="@android:color/white" />
         </TableRow>
@@ -165,10 +165,10 @@
                 android:layout_width="128dp"
                 android:layout_height="match_parent"
                 android:background="#4b423d"
-                android:drawableTop="@mipmap/ic_launcher"
+                android:drawableTop="@mipmap/ph_lc"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="TextView"
+                android:text="理财计算"
                 android:textAlignment="center"
                 android:textColor="@android:color/white" />
 
@@ -177,10 +177,10 @@
                 android:layout_width="128dp"
                 android:layout_height="match_parent"
                 android:background="#564d44"
-                android:drawableTop="@mipmap/ic_launcher"
+                android:drawableTop="@mipmap/ph_zhd"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="TextView"
+                android:text="组合贷款计算"
                 android:textAlignment="center"
                 android:textColor="@android:color/white" />
 
@@ -189,10 +189,10 @@
                 android:layout_width="128dp"
                 android:layout_height="match_parent"
                 android:background="#5a5148"
-                android:drawableTop="@mipmap/ic_launcher"
+                android:drawableTop="@mipmap/ph_d_c"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="TextView"
+                android:text="亲属称呼换算"
                 android:textAlignment="center"
                 android:textColor="@android:color/white" />
         </TableRow>

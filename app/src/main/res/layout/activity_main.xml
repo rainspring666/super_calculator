@@ -31,19 +31,19 @@
                 android:drawableTop="@mipmap/ph_a_c"
                 android:gravity="center"
                 android:padding="19dp"
-                android:text="四则运算"
+                android:text="@string/digitalcal_name"
                 android:textAlignment="center"
                 android:textColor="@android:color/white" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/textView_loan"
                 android:layout_width="128dp"
                 android:layout_height="match_parent"
                 android:background="#564d44"
                 android:drawableTop="@mipmap/ph_b_c"
                 android:gravity="center"
                 android:padding="19dp"
-                android:text="贷款计算"
+                android:text="@string/loan"
                 android:textAlignment="center"
                 android:textColor="@android:color/white" />
 

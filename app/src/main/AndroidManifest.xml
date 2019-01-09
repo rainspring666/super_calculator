@@ -19,8 +19,10 @@
 
         <activity
             android:name="com.aged.supercal.DigitalCalActivity"
-            android:label="@string/digitalcal_name"
-            ></activity>
+            android:label="@string/digitalcal_name">
+        </activity>
+        <activity android:name=".LoanActivity"
+            android:label="@string/loan"></activity>
 
     </application>
 

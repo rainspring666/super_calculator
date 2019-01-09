@@ -2,4 +2,5 @@
     <string name="app_name">超级计算器</string>
     <string name="digitalcal_name">基本计算器</string>
     <string name="textview">TextView</string>
+    <string name="mortgage">房贷计算</string>
 </resources>

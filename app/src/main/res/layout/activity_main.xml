@@ -43,7 +43,7 @@
                 android:drawableTop="@mipmap/ph_b_c"
                 android:gravity="center"
                 android:padding="19dp"
-                android:text="个税计算"
+                android:text="贷款计算"
                 android:textAlignment="center"
                 android:textColor="@android:color/white" />
 
@@ -52,10 +52,10 @@
                 android:layout_width="128dp"
                 android:layout_height="match_parent"
                 android:background="#5a5148"
-                android:drawableTop="@mipmap/ph_c_c"
+                android:drawableTop="@mipmap/ph_gj"
                 android:gravity="center"
                 android:padding="19dp"
-                android:text="房贷计算"
+                android:text="公积金贷款计算"
                 android:textAlignment="center"
                 android:textColor="@android:color/white" />
         </TableRow>
@@ -74,10 +74,10 @@
                 android:layout_width="128dp"
                 android:layout_height="match_parent"
                 android:background="#564d44"
-                android:drawableTop="@mipmap/ph_d_c"
+                android:drawableTop="@mipmap/ph_yx"
                 android:gravity="center"
                 android:padding="19dp"
-                android:text="亲属称呼换算"
+                android:text="月薪税"
                 android:textAlignment="center"
                 android:textColor="@android:color/white" />
 
@@ -89,7 +89,7 @@
                 android:drawableTop="@mipmap/ph_e_c"
                 android:gravity="center"
                 android:padding="19dp"
-                android:text="单位换算"
+                android:text="年终奖"
                 android:textAlignment="center"
                 android:textColor="@android:color/white" />
 
@@ -98,10 +98,10 @@
                 android:layout_width="128dp"
                 android:layout_height="match_parent"
                 android:background="#4b423d"
-                android:drawableTop="@mipmap/ph_f_c"
+                android:drawableTop="@mipmap/ph_gc"
                 android:gravity="center"
                 android:padding="19dp"
-                android:text="时间换算"
+                android:text="稿酬"
                 android:textAlignment="center"
                 android:textColor="@android:color/white" />
         </TableRow>

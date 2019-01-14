@@ -17,7 +17,6 @@ public class Drawf_fee extends AppCompatActivity implements View.OnClickListener
 
         drawf_btn=(Button) findViewById(R.id.drawf_btn);
         drawf_fee=(TextView) findViewById(R.id.drawf_fee);
-
         drawf_btn.setOnClickListener(this);
     }
 
@@ -36,9 +35,15 @@ public class Drawf_fee extends AppCompatActivity implements View.OnClickListener
             double drawffee = Double.parseDouble(drawf_fee.getText().toString());  //转化为double型
 
             //计算所交税率
-            double result = 0;   //保存计算结果
-            if (drawffee <= 4000) result = (drawffee - 800) * 0.2 * (1 - 0.3);   //收入小于4000
-            if (drawffee > 4000) result = drawffee * (1 - 0.2) * 0.2 * (1 - 0.3);   //收入小于4000
+            double tax = 0;   //保存计算结果
+            if (drawffee <= 4000 && drawffee >800) tax = (drawffee - 800) ;   //收入小于4000
+            if (drawffee > 4000) tax = drawffee * 0.8;
+            if(tax<=20000)
+                tax = tax * 0.2;
+            else if(tax<=50000 && tax > 20000)
+                tax = tax * 0.3 - 2000;
+            else if(tax>50000)
+                tax = tax * 0.4 -7000;
 
             //跳转结果界面
             Intent i = new Intent(Drawf_fee.this, Drawf_result.class);
@@ -47,9 +52,9 @@ public class Drawf_fee extends AppCompatActivity implements View.OnClickListener
 
             //传值
             Bundle bundle = new Bundle();
-            bundle.putString("drawfafterincome", df.format(drawffee-result));
+            bundle.putString("drawfafterincome", df.format(drawffee-tax));
             bundle.putString("drawfbeforeincome", df.format(drawffee));
-            bundle.putString("drawftotaltax", df.format(result));
+            bundle.putString("drawftotaltax", df.format(tax));
             i.putExtras(bundle);
 
             startActivity(i);

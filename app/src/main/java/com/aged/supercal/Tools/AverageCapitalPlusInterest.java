@@ -10,7 +10,7 @@ import java.util.Map;
 public class AverageCapitalPlusInterest {
 
     //剩余贷款
-    public Map<Integer, BigDecimal> getLeftInvest(int invest, double yearRate, int totalmonth) {
+    public Map<Integer, BigDecimal> getLeftInvest(double invest, double yearRate, int totalmonth) {
         Map<Integer, BigDecimal> mapPrincipal = new HashMap<Integer, BigDecimal>();
         Map<Integer, BigDecimal> map = getPerMonthPrincipal(invest, yearRate, totalmonth);
         BigDecimal sum = new BigDecimal(0);

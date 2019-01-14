@@ -47,35 +47,46 @@ public class EndYear_Cal_Activity extends AppCompatActivity implements View.OnCl
             Toast.makeText(EndYear_Cal_Activity.this, "输入中包含非数字字符",Toast.LENGTH_SHORT).show();
         }else{
 
-            double endyearmoney=Double.parseDouble(end_year_money.getText().toString());
-            double endmonthincome=Double.parseDouble(end_month_income.getText().toString());
+            double year = Double.parseDouble(end_year_money.getText().toString());
+            double month = Double.parseDouble(end_month_income.getText().toString());
 
-            //计算工资利息
-            double result_1=0;   //保存工资利息
-            if(endmonthincome<=3000)  result_1=endmonthincome*0.03;   //不超过3000
-            if(3000<endmonthincome && endmonthincome<=12000)   result_1=endmonthincome*0.10;    //3000-12000
-            if(12000<endmonthincome && endmonthincome<=25000)   result_1=endmonthincome*0.20;   //12000-25000
-            if(25000<endmonthincome && endmonthincome<=35000)  result_1=endmonthincome*0.25;   //25000-35000
-            if(35000<endmonthincome && endmonthincome<=55000)  result_1=endmonthincome*0.30;   //35000-55000
-            if(55000<endmonthincome && endmonthincome<=80000)  result_1=endmonthincome*0.35;   //55000-80000
-            if(endmonthincome>80000)                           result_1=endmonthincome*0.45;   //大于80000
+            double taxMomey = 0;
+            if(month >= 5000){
+                double temp = year / 12;
+                if(temp<=3000 && temp>=0)
+                    taxMomey = year * 0.03;
+                else if (temp<=12000 && temp>3000)
+                    taxMomey = year * 0.1 - 210;
+                else if(temp<=25000 && temp>12000)
+                    taxMomey = year * 0.2 - 1410;
+                else if(temp<=35000 && temp>25000)
+                    taxMomey = year * 0.25 - 2660;
+                else if(temp<=55000 && temp>35000)
+                    taxMomey = year * 0.30 - 4410;
+                else if(temp<=80000 && temp>55000)
+                    taxMomey = year * 0.35 - 7160;
+                else if(temp>80000)
+                    taxMomey = year * 0.45 - 15160;
+            }else{
+                double newyear = year - (5000 - month );
+                double temp = (newyear) / 12;
+                if(temp<=3000 && temp>=0)
+                    taxMomey = newyear * 0.03;
+                else if (temp<=12000 && temp>3000)
+                    taxMomey = newyear * 0.1 - 210;
+                else if(temp<=25000 && temp>12000)
+                    taxMomey = newyear * 0.2 - 1410;
+                else if(temp<=35000 && temp>25000)
+                    taxMomey = newyear * 0.25 - 2660;
+                else if(temp<=55000 && temp>35000)
+                    taxMomey = newyear * 0.30 - 4410;
+                else if(temp<=80000 && temp>55000)
+                    taxMomey = newyear * 0.35 - 7160;
+                else if(temp>80000)
+                    taxMomey = newyear * 0.45 - 15160;
+            }
 
-
-            //计算年终奖税率
-            double result_2=0;  //保存年终奖个人所得税奖金
-
-            if(endyearmoney<=5000)                               result_2=0;  //不超过3000
-            if(endyearmoney/12<3000)                             result_2=endyearmoney*0.03;   //3000-12000
-            if(3000<endyearmoney/12 && endyearmoney/12<=12000)   result_2=endyearmoney*0.10-210;   //3000-12000
-            if(12000<endyearmoney/12 && endyearmoney/12<=25000)  result_2=endyearmoney*0.20-1410;   //12000-25000
-            if(25000<endyearmoney/12 && endyearmoney/12<=35000)  result_2=endyearmoney*0.25-2660;   //25000-35000
-            if(35000<endyearmoney/12 && endyearmoney/12<=55000)  result_2=endyearmoney*0.30-4410;   //35000-55000
-            if(55000<endyearmoney/12 && endyearmoney/12<=80000)  result_2=endyearmoney*0.35-7160;   //55000-80000
-            if(endyearmoney/12>80000)                            result_2=endyearmoney*0.45-15160;
-
-
-
-            // Toast.makeText(EndYear_Cal_Activity.this, String.valueOf(result_1),Toast.LENGTH_SHORT).show();
+//             Toast.makeText(EndYear_Cal_Activity.this, String.valueOf(result_1),Toast.LENGTH_SHORT).show();
             // Toast.makeText(EndYear_Cal_Activity.this, String.valueOf(result_2),Toast.LENGTH_SHORT).show();
 
             //跳转结果界面
@@ -84,9 +95,9 @@ public class EndYear_Cal_Activity extends AppCompatActivity implements View.OnCl
             DecimalFormat df=new DecimalFormat( "###############0.00 ");
             //传值
             Bundle bundle = new Bundle();
-            bundle.putString("after_income", df.format(endyearmoney+endmonthincome-result_1-result_2));
-            bundle.putString("before_income", df.format(endmonthincome));
-            bundle.putString("whole_tax", df.format(result_1+result_2));
+            bundle.putString("after_income", df.format(year-taxMomey));
+            bundle.putString("before_income", df.format(year));
+            bundle.putString("whole_tax", df.format(taxMomey));
             i.putExtras(bundle);
 
             startActivity(i);

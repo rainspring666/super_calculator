@@ -7,13 +7,13 @@ import java.util.Map;
 public class AverageCapital {
 
      //等额本金计算---每月归还本金
-    public BigDecimal getPerMonthPrincipal(int invest, int totalMonth) {
+    public BigDecimal getPerMonthPrincipal(double invest, int totalMonth) {
         BigDecimal monthIncome = new BigDecimal(invest).divide(new BigDecimal(totalMonth), 2, BigDecimal.ROUND_DOWN);
         return monthIncome;
     }
 
     //等额本金计算---每月剩余贷款金额
-    public Map<Integer,BigDecimal> getLeftInvest(int invest, int totalMonth){
+    public Map<Integer,BigDecimal> getLeftInvest(double invest, int totalMonth){
         BigDecimal big_invest = new BigDecimal(invest);
         Map<Integer, BigDecimal> map = new HashMap<Integer, BigDecimal>();
         //每月本金
@@ -27,7 +27,7 @@ public class AverageCapital {
     }
 
     //等额本金计算---每月利息
-    public Map<Integer,BigDecimal> getPerMonthRest(int invest,double yearRate,int totalMonth){
+    public Map<Integer,BigDecimal> getPerMonthRest(double invest,double yearRate,int totalMonth){
         Map<Integer,BigDecimal> map = new HashMap<Integer, BigDecimal>();
         BigDecimal big_invest = new BigDecimal(invest);
         // 每月本金
@@ -46,7 +46,7 @@ public class AverageCapital {
     }
 
     //等额本金计算----每月归还本金monthPri+利息（月供）
-    public Map<Integer, BigDecimal> getPerMonthPrincipalInterest(int invest, double yearRate, int totalMonth) {
+    public Map<Integer, BigDecimal> getPerMonthPrincipalInterest(double invest, double yearRate, int totalMonth) {
         Map<Integer, BigDecimal> map = new HashMap<Integer, BigDecimal>();
         BigDecimal big_invest = new BigDecimal(invest);
         // 每月本金
@@ -64,7 +64,7 @@ public class AverageCapital {
     }
 
     //等额本金计算---累计利息
-    public BigDecimal getTotalRest(int invest, double yearRate, int totalMonth){
+    public BigDecimal getTotalRest(double invest, double yearRate, int totalMonth){
         BigDecimal count = new BigDecimal(0);
         Map<Integer, BigDecimal> mapInterest = getPerMonthRest(invest, yearRate, totalMonth);
 
@@ -74,7 +74,7 @@ public class AverageCapital {
         return count;
     }
     //等额本金计算---累计还款金额
-    public BigDecimal getTotalMoney(int invest,double yearRate,int totalMonth){
+    public BigDecimal getTotalMoney(double invest,double yearRate,int totalMonth){
         BigDecimal count = new BigDecimal(0);
         Map<Integer, BigDecimal> mapInterest = getPerMonthPrincipalInterest(invest, yearRate, totalMonth);
 

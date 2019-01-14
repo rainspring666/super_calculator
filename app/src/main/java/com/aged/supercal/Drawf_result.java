@@ -33,7 +33,7 @@ public class Drawf_result extends AppCompatActivity {
 
 
         drawf_after_income.setText(drawfafterincome);
-        drawf_total_tax.setText(drawfbeforeincome);
-        drawf_before_income.setText(drawftotaltax);
+        drawf_total_tax.setText(drawftotaltax);
+        drawf_before_income.setText(drawfbeforeincome);
     }
 }

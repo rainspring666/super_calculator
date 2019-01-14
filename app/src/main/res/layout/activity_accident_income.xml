@@ -22,14 +22,14 @@
             android:layout_weight="1"
             android:gravity="center"
             android:padding="12dp"
-            android:text="所得收入"
-            android:textSize="18dp"  />
+            android:text="所得收入(元)"
+            android:textSize="18dp" />
 
         <EditText
             android:id="@+id/accident_income"
             android:layout_width="2dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="30dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="2"
             android:hint="请输入收入"
             android:inputType="number"
@@ -63,6 +63,7 @@
             <RadioButton
                 android:id="@+id/accident_classfy"
                 android:layout_height="match_parent"
+                android:layout_width="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:padding="12dp"
@@ -71,6 +72,7 @@
             <RadioButton
                 android:id="@+id/accident_classfy_qita"
                 android:layout_height="match_parent"
+                android:layout_width="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:padding="12dp"

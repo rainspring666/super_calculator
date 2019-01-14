@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     >
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -33,7 +32,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="C"
-            android:textSize="40sp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:textSize="26dp"
             android:id="@+id/btn_clear"
             android:layout_weight="1"
             android:background="#ffffff"/>
@@ -42,7 +42,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="/"
-            android:textSize="40sp"
+            android:textSize="30dp"
             android:id="@+id/btn_divide"
             android:layout_weight="1"
             android:background="#ffffff"/>
@@ -54,7 +54,7 @@
             android:layout_weight="1"
             android:background="#ffffff"
             android:text="*"
-            android:textSize="40sp" />
+            android:textSize="30dp" />
 
         <Button
             android:id="@+id/btn_del"
@@ -62,8 +62,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#ffffff"
-            android:text="Del"
-            android:textSize="40sp" />
+            android:text="del"
+            android:fontFamily="sans-serif-smallcaps"
+            android:textSize="26dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -107,7 +108,8 @@
             android:layout_weight="1"
             android:background="#ffffff"
             android:text="-"
-            android:textSize="50sp" />
+            android:fontFamily="sans-serif-smallcaps"
+            android:textSize="36dp" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="fill_parent"
@@ -148,7 +150,8 @@
             android:layout_weight="1"
             android:background="#ffffff"
             android:text="+"
-            android:textSize="40sp" />
+            android:fontFamily="sans-serif-smallcaps"
+            android:textSize="36dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -233,7 +236,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@android:color/holo_orange_dark"
+            android:background="#FFDEAD"
             android:text="="
             android:textSize="30sp" />
 

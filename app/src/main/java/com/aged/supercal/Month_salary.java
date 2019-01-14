@@ -1,12 +1,18 @@
 package com.aged.supercal;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.view.View;
-import android.content.Intent;
+import android.widget.AdapterView.OnItemSelectedListener;
+
+
 import java.text.DecimalFormat;
 
 
@@ -26,7 +32,13 @@ public class Month_salary extends AppCompatActivity implements View.OnClickListe
     private TextView birth_company;
     private TextView fund_person;
     private TextView fund_company;
+    private Spinner spinner;
     Button month_salary_tax;
+
+    private String strCity;
+    private double baseNum = 5080;//社保汇缴基数
+    private double baseNum2 = 2273;//公积金汇缴
+    private String[] arrCity={"北京","上海","广州","深圳","武汉","其他"};
 
     public void Intitview(){
         month_salary_tax = (Button) findViewById(R.id.month_salary_tax);  //计算按钮
@@ -48,8 +60,31 @@ public class Month_salary extends AppCompatActivity implements View.OnClickListe
 
         month_salary_tax.setOnClickListener(this);
 
+        spinner= (Spinner) findViewById(R.id.spinner);
+        //创建ArrayAdapter对象
+        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,arrCity);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(new ProvOnItemSelectedListener());
+
     }
 
+
+    public void getCity(){
+        switch (strCity){
+            case "北京":
+                baseNum = 5080; baseNum2 = 2273;break;
+            case "上海":
+                baseNum = 4279;baseNum2 = 2300;break;
+            case "广州":
+                baseNum = 2100;baseNum2 = 2100;break;
+            case "深圳":
+                baseNum = 2200;baseNum2 = 2130;break;
+            case "武汉":
+                baseNum = 3399.6;baseNum2 = 1750;break;
+            default:
+                baseNum = 5080; baseNum2 = 2273;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,10 +92,28 @@ public class Month_salary extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_month_salary);
 
         Intitview();   //调用初始化函数
+
     }
 
-    public void onClick(View v){
+    //OnItemSelected监听器
+    private class  ProvOnItemSelectedListener implements OnItemSelectedListener{
+        @Override
+        public void onItemSelected(AdapterView<?> adapter,View view,int position,long id) {
+            //获取选择的项的值
+            strCity=adapter.getItemAtPosition(position).toString();
+//            Toast.makeText(getApplicationContext(), strCity, Toast.LENGTH_LONG).show();
+        }
 
+        @Override
+        public void onNothingSelected(AdapterView<?> arg0) {
+            String sInfo="什么也没选！";
+            Toast.makeText(getApplicationContext(),sInfo, Toast.LENGTH_LONG).show();
+
+        }
+    }
+
+
+    public void onClick(View v){
         //传值
         Bundle bundle = new Bundle();
         DecimalFormat df=new DecimalFormat( "###############0.00 ");
@@ -112,14 +165,16 @@ public class Month_salary extends AppCompatActivity implements View.OnClickListe
 
             double result_person=0,  result_company=0,result_person_fund=0,result_company_fund=0, result_1=0;   //保存工资利息 //保存个人缴纳总和，单位总和
 
-            if(taxbefore_point<=2400){
+            getCity();//获取城市
+
+            if(taxbefore_point<=baseNum){
                 //个人缴纳
-                double old_tax_person=2400*oldperson*0.01;  //养老
-                double medical_tax_person=2400*medicalperson*0.01;  //医疗
-                double unemployee_tax_person=2400*unemployeeperson*0.01;  //失业
-                double injury_tax_person=2400*injuryperson*0.01;  //工伤
-                double birth_tax_person=2400*birthperson*0.01;  //生育
-                double fund_tax_person=2400*fundperson*0.01;  //公积金
+                double old_tax_person=baseNum*oldperson*0.01;  //养老
+                double medical_tax_person=baseNum*medicalperson*0.01;  //医疗
+                double unemployee_tax_person=baseNum*unemployeeperson*0.01;  //失业
+                double injury_tax_person=baseNum*injuryperson*0.01;  //工伤
+                double birth_tax_person=baseNum*birthperson*0.01;  //生育
+                double fund_tax_person=baseNum2*fundperson*0.01;  //公积金
 
                 bundle.putString("old_taxperson", df.format(old_tax_person));  //个人养老
                 bundle.putString("medical_taxperson", df.format(medical_tax_person));  //个人医疗
@@ -133,12 +188,12 @@ public class Month_salary extends AppCompatActivity implements View.OnClickListe
                 result_person=old_tax_person+medical_tax_person+unemployee_tax_person+injury_tax_person+birth_tax_person+fund_tax_person; //个人社保
 
                 //单位缴纳
-                double old_tax_company=2400*oldcompany*0.01;  //养老
-                double medical_tax_conmpany=2400*medicalcompany*0.01;  //医疗
-                double unemployee_tax_company=2400*unemployeecompany*0.01;  //失业
-                double injury_tax_company=2400*injurycompany*0.01;  //工伤
-                double birth_tax_company=2400*birthcompany*0.01;  //生育
-                double fund_tax_company=2400*fundcompany*0.01;  //公积金
+                double old_tax_company=baseNum*oldcompany*0.01;  //养老
+                double medical_tax_conmpany=baseNum*medicalcompany*0.01;  //医疗
+                double unemployee_tax_company=baseNum*unemployeecompany*0.01;  //失业
+                double injury_tax_company=baseNum*injurycompany*0.01;  //工伤
+                double birth_tax_company=baseNum*birthcompany*0.01;  //生育
+                double fund_tax_company=baseNum2*fundcompany*0.01;  //公积金
 
                 bundle.putString("old_taxcompany", df.format(old_tax_company));  //个人养老
                 bundle.putString("medical_taxcompany", df.format(medical_tax_conmpany));  //个人医疗
@@ -156,7 +211,7 @@ public class Month_salary extends AppCompatActivity implements View.OnClickListe
             }
 
 
-            if(taxbefore_point>2400){
+            if(taxbefore_point>baseNum){
                 //个人缴纳
                 double old_tax_person=taxbefore_point*oldperson*0.01;  //养老
                 double medical_tax_person=taxbefore_point*medicalperson*0.01;  //医疗

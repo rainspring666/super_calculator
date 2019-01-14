@@ -8,10 +8,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="380dp"
+        android:layout_height="460dp"
         android:layout_marginTop="25dp"
         android:background="@android:color/background_light"
         android:orientation="vertical">
+
+
 
 
         <LinearLayout
@@ -28,7 +30,7 @@
                 android:gravity="center"
                 android:padding="12dp"
                 style="@style/LabTextColor"
-                android:text="税前工资"
+                android:text="税前工资(元)"
                 android:textSize="18dp" />
 
             <EditText
@@ -43,6 +45,8 @@
                 android:inputType="number"
                 android:maxLength="10" />
         </LinearLayout>
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -73,6 +77,38 @@
                  />
         </LinearLayout>
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="地点"
+                android:textSize="18dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+        </LinearLayout>
+
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="290dp"
@@ -86,15 +122,14 @@
 
                 <TextView
                     android:id="@+id/textView14"
+                    style="@style/LabTextColor"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:padding="12dp"
                     android:gravity="center"
-                    style="@style/LabTextColor"
+                    android:padding="12dp"
                     android:text="缴纳项目"
-                    android:textSize="15dp"
-                    />
+                    android:textSize="16dp" />
 
                 <TextView
                     android:id="@+id/textView15"
@@ -110,15 +145,14 @@
 
                 <TextView
                     android:id="@+id/textView16"
+                    style="@style/LabTextColor"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:padding="12dp"
                     android:gravity="center"
-                    style="@style/LabTextColor"
+                    android:padding="12dp"
                     android:text="单位缴纳(%)"
-                    android:textSize="15dp"
-                    />
+                    android:textSize="16dp" />
 
             </TableRow>
 
@@ -130,15 +164,14 @@
 
                 <TextView
                     android:id="@+id/textView17"
+                    style="@style/LabTextColor"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:padding="12dp"
                     android:gravity="center"
-                    style="@style/LabTextColor"
+                    android:padding="10dp"
                     android:text="养老"
-                    android:textSize="12dp"
-                    />
+                    android:textSize="14dp" />
 
                 <EditText
                     android:id="@+id/old_person"
@@ -148,7 +181,7 @@
                     android:layout_weight="1"
                     android:text="8.0"
                     android:inputType="number"
-                    android:textSize="12dp" />
+                    android:textSize="14dp" />
 
                 <EditText
                     android:id="@+id/old_company"
@@ -158,7 +191,7 @@
                     android:layout_weight="1"
                     android:text="19.0"
                     android:inputType="number"
-                    android:textSize="12dp" />
+                    android:textSize="14dp" />
 
             </TableRow>
 
@@ -173,11 +206,11 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:padding="12dp"
+                    android:padding="10dp"
                     android:gravity="center"
                     style="@style/LabTextColor"
                     android:text="医疗"
-                    android:textSize="12dp"
+                    android:textSize="14dp"
                     />
 
                 <EditText
@@ -188,7 +221,7 @@
                     android:layout_weight="1"
                     android:text="2.0"
                     android:inputType="number"
-                    android:textSize="12dp" />
+                    android:textSize="14dp" />
 
                 <EditText
                     android:id="@+id/medical_company"
@@ -198,7 +231,7 @@
                     android:layout_weight="1"
                     android:text="8.0"
                     android:inputType="number"
-                    android:textSize="12dp" />
+                    android:textSize="14dp" />
 
             </TableRow>
 
@@ -213,11 +246,11 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:padding="12dp"
+                    android:padding="10dp"
                     android:gravity="center"
                     style="@style/LabTextColor"
                     android:text="失业"
-                    android:textSize="12dp"
+                    android:textSize="14dp"
                     />
 
                 <EditText
@@ -228,7 +261,7 @@
                     android:layout_weight="1"
                     android:text="0.5"
                     android:inputType="number"
-                    android:textSize="12dp" />
+                    android:textSize="14dp" />
 
                 <EditText
                     android:id="@+id/unemployee_company"
@@ -238,7 +271,7 @@
                     android:layout_weight="1"
                     android:text="0.5"
                     android:inputType="number"
-                    android:textSize="12dp" />
+                    android:textSize="14dp" />
 
             </TableRow>
 
@@ -253,11 +286,11 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:padding="12dp"
+                    android:padding="10dp"
                     android:gravity="center"
                     style="@style/LabTextColor"
                     android:text="工伤"
-                    android:textSize="12dp"
+                    android:textSize="14dp"
                     />
 
                 <EditText
@@ -268,7 +301,7 @@
                     android:layout_weight="1"
                     android:text="0.0"
                     android:inputType="number"
-                    android:textSize="12dp" />
+                    android:textSize="14dp" />
 
                 <EditText
                     android:id="@+id/injury_company"
@@ -278,7 +311,7 @@
                     android:layout_weight="1"
                     android:text="0.6"
                     android:inputType="number"
-                    android:textSize="12dp" />
+                    android:textSize="14dp" />
 
             </TableRow>
 
@@ -293,11 +326,11 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:padding="12dp"
+                    android:padding="10dp"
                     android:gravity="center"
                     style="@style/LabTextColor"
                     android:text="生育"
-                    android:textSize="12dp"
+                    android:textSize="14dp"
                     />
 
                 <EditText
@@ -308,7 +341,7 @@
                     android:layout_weight="1"
                     android:text="0.0"
                     android:inputType="number"
-                    android:textSize="12dp" />
+                    android:textSize="14dp" />
 
                 <EditText
                     android:id="@+id/birth_company"
@@ -318,7 +351,7 @@
                     android:layout_weight="1"
                     android:text="0.5"
                     android:inputType="number"
-                    android:textSize="12dp" />
+                    android:textSize="14dp" />
 
             </TableRow>
 
@@ -333,11 +366,11 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:padding="12dp"
+                    android:padding="10dp"
                     android:gravity="center"
                     style="@style/LabTextColor"
                     android:text="公积金"
-                    android:textSize="12dp"
+                    android:textSize="14dp"
                     />
 
                 <EditText
@@ -358,7 +391,7 @@
                     android:layout_weight="1"
                     android:text="7.0"
                     android:inputType="number"
-                    android:textSize="12dp" />
+                    android:textSize="14dp" />
 
             </TableRow>
 

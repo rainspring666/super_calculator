@@ -26,21 +26,21 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:padding="12dp"
-                android:text="贷款金额"
-                android:textSize="18dp"
-                android:gravity="center"/>
+                android:text="贷款金额(万元)"
+                android:textSize="16dp" />
 
             <EditText
                 android:id="@+id/editText_money"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="30dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="请输入一个有效整数(万元)"
-                android:inputType="number"
-                android:maxLength="4" />
+                android:hint="贷款金额"
+                android:inputType="numberDecimal"
+                android:maxLength="7" />
         </LinearLayout>
 
         <LinearLayout
@@ -53,19 +53,19 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:padding="12dp"
-                android:text="贷款年限"
-                android:textSize="18dp"
-                android:gravity="center"/>
+                android:text="贷款年限(年)"
+                android:textSize="18dp" />
 
             <EditText
                 android:id="@+id/editText_year"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="30dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="请输入一个有效整数(年)"
+                android:hint="贷款年限"
                 android:inputType="number"
                 android:maxLength="2" />
 
@@ -90,10 +90,10 @@
                 android:id="@+id/editText_rate"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="30dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="请参考利率表"
+                android:hint="请参考下方利率表"
                 android:inputType="numberDecimal"
                 android:maxLength="5" />
         </LinearLayout>

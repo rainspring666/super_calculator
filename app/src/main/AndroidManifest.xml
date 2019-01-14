@@ -105,10 +105,14 @@
         <activity
             android:name=".AboutTeamActivity"
             android:label="@string/aboutteam"
-            android:parentActivityName=".AboutActivity"></activity>
+            android:parentActivityName=".AboutActivity">
+
+        </activity>
         <activity android:name=".RatePersonActivity"
             android:label="@string/personrate"
-            android:parentActivityName=".Individual_operation"></activity>
+            android:parentActivityName=".Individual_operation">
+
+        </activity>
     </application>
 
 </manifest>

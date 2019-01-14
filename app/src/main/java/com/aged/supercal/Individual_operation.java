@@ -1,26 +1,23 @@
 package com.aged.supercal;
 
-import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Button;
+import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Button;
+import android.view.View;
 import android.widget.Toast;
+import android.content.Intent;
+import java.text.DecimalFormat;
 
 public class Individual_operation extends AppCompatActivity implements View.OnClickListener{
 
     Button Individual_btn;
     private TextView Individual_income;
-    private TextView textView_rate;
 
     public void Intitview(){
         Individual_btn = (Button) findViewById(R.id.Individual_btn);  //计算按钮
         Individual_income=(TextView) findViewById(R.id.Individual_income);
         Individual_btn.setOnClickListener(this);
-        //税率表 可忽略
-        textView_rate = (TextView)findViewById(R.id.textView_rate);
-        textView_rate.setOnClickListener(new TextViewListener());
 
     }
 
@@ -49,23 +46,17 @@ public class Individual_operation extends AppCompatActivity implements View.OnCl
             //跳转结果界面
             Intent i=new Intent(Individual_operation.this,Individual_result.class);
 
+            DecimalFormat df=new DecimalFormat( "###############0.00 ");
+
+
             //传值
             Bundle bundle = new Bundle();
-            bundle.putString("individualafterincome", String.valueOf(Individualincome-result));
-            bundle.putString("individualbeforeincome", String.valueOf(Individualincome));
-            bundle.putString("individualtotaltax", String.valueOf(result));
+            bundle.putString("individualafterincome", df.format(Individualincome-result));
+            bundle.putString("individualbeforeincome", df.format(Individualincome));
+            bundle.putString("individualtotaltax", df.format(result));
             i.putExtras(bundle);
 
             startActivity(i);
-        }
-    }
-
-    class TextViewListener implements View.OnClickListener{
-        @Override
-        public void onClick(View v) {
-            Intent intent = new Intent();
-            intent.setClass(Individual_operation.this,RatePersonActivity.class);
-            startActivity(intent);
         }
     }
 }

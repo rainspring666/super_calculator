@@ -37,14 +37,14 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/month_real_money"
+                style="@style/NetValueColor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:paddingLeft="5dp"
                 android:text="￥6508.79"
-                android:textSize="25dp"
-                style="@style/NetValueColor"
-                android:paddingLeft="5dp"/>
+                android:textSize="25dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -69,14 +69,14 @@
                     android:gravity="center"/>
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/month_before_money"
+                    style="@style/ResultValueColor"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="3"
-                    style="@style/ResultValueColor"
-                    android:text="7946.00"
                     android:gravity="center"
-                    android:textSize="21dp"/>
+                    android:text="7946.00"
+                    android:textSize="21dp" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="0dp"
@@ -95,13 +95,13 @@
                     android:gravity="center" />
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/month_real_shebao"
+                    style="@style/ResultValueColor"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="3"
-                    style="@style/ResultValueColor"
-                    android:text="834.33"
                     android:gravity="center"
+                    android:text="834.33"
                     android:textSize="21dp" />
             </LinearLayout>
             <LinearLayout
@@ -121,13 +121,13 @@
                     android:gravity="center" />
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/month_real_fund"
+                    style="@style/ResultValueColor"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="3"
-                    style="@style/ResultValueColor"
-                    android:text="556.22"
                     android:gravity="center"
+                    android:text="556.22"
                     android:textSize="21dp" />
             </LinearLayout>
             <LinearLayout
@@ -147,13 +147,13 @@
                     android:gravity="center" />
 
                 <TextView
-                    android:id="@+id/textView10"
+                    android:id="@+id/month_real_tax"
+                    style="@style/ResultValueColor"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="3"
-                    style="@style/ResultValueColor"
-                    android:text="46.66"
                     android:gravity="center"
+                    android:text="46.66"
                     android:textSize="21dp" />
             </LinearLayout>
 
@@ -191,14 +191,14 @@
                 />
 
             <TextView
-                android:id="@+id/textView12"
+                android:id="@+id/month_perreal_jiaona"
+                style="@style/ResultValueColor"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="5"
-                style="@style/ResultValueColor"
+                android:paddingTop="7dp"
                 android:text="1437.21"
-                android:textSize="18dp"
-                android:paddingTop="7dp"/>
+                android:textSize="18dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -218,14 +218,14 @@
                 android:gravity="center" />
 
             <TextView
-                android:id="@+id/textView14"
+                android:id="@+id/month_comreal_money"
+                style="@style/ResultValueColor"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="5"
-                style="@style/ResultValueColor"
+                android:paddingTop="7dp"
                 android:text="2828.78"
-                android:textSize="18dp"
-                android:paddingTop="7dp" />
+                android:textSize="18dp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -297,26 +297,24 @@
                 />
 
             <TextView
-                android:id="@+id/textView19"
+                android:id="@+id/per_old"
+                style="@style/ResultValueColor"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                style="@style/ResultValueColor"
                 android:text="635.68"
-                android:textSize="12dp"
-                />
+                android:textSize="12dp" />
 
             <TextView
-                android:id="@+id/TextView20"
+                android:id="@+id/com_old"
+                style="@style/ResultValueColor"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                style="@style/ResultValueColor"
                 android:text="635.68"
-                android:textSize="12dp"
-                />
+                android:textSize="12dp" />
 
         </TableRow>
 
@@ -339,26 +337,24 @@
                 />
 
             <TextView
-                android:id="@+id/TextView22"
+                android:id="@+id/per_med"
+                style="@style/ResultValueColor"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                style="@style/ResultValueColor"
                 android:text="158.92"
-                android:textSize="12dp"
-                />
+                android:textSize="12dp" />
 
             <TextView
-                android:id="@+id/TextView23"
+                android:id="@+id/com_med"
+                style="@style/ResultValueColor"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                style="@style/ResultValueColor"
                 android:text="635.68"
-                android:textSize="12dp"
-                />
+                android:textSize="12dp" />
 
         </TableRow>
 
@@ -381,26 +377,24 @@
                 />
 
             <TextView
-                android:id="@+id/TextView25"
+                android:id="@+id/per_unemploy"
+                style="@style/ResultValueColor"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                style="@style/ResultValueColor"
                 android:text="39.73"
-                android:textSize="12dp"
-                />
+                android:textSize="12dp" />
 
             <TextView
-                android:id="@+id/TextView26"
+                android:id="@+id/com_unemplo"
+                style="@style/ResultValueColor"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                style="@style/ResultValueColor"
                 android:text="39.73"
-                android:textSize="12dp"
-                />
+                android:textSize="12dp" />
 
         </TableRow>
 
@@ -423,26 +417,24 @@
                 />
 
             <TextView
-                android:id="@+id/TextView27"
+                android:id="@+id/per_injur"
+                style="@style/ResultValueColor"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                style="@style/ResultValueColor"
                 android:text="0.00"
-                android:textSize="12dp"
-                />
+                android:textSize="12dp" />
 
             <TextView
-                android:id="@+id/TextView28"
+                android:id="@+id/com_inj"
+                style="@style/ResultValueColor"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                style="@style/ResultValueColor"
                 android:text="47.68"
-                android:textSize="12dp"
-                />
+                android:textSize="12dp" />
 
         </TableRow>
 
@@ -465,26 +457,24 @@
                 />
 
             <TextView
-                android:id="@+id/TextView30"
+                android:id="@+id/per_birth"
+                style="@style/ResultValueColor"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                style="@style/ResultValueColor"
                 android:text="0.00"
-                android:textSize="12dp"
-                />
+                android:textSize="12dp" />
 
             <TextView
-                android:id="@+id/TextView31"
+                android:id="@+id/com_birth"
+                style="@style/ResultValueColor"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                style="@style/ResultValueColor"
                 android:text="39.73"
-                android:textSize="12dp"
-                />
+                android:textSize="12dp" />
 
         </TableRow>
 
@@ -507,26 +497,24 @@
                 />
 
             <TextView
-                android:id="@+id/TextView33"
+                android:id="@+id/per_gongji"
+                style="@style/ResultValueColor"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                style="@style/ResultValueColor"
                 android:text="556.22"
-                android:textSize="12dp"
-                />
+                android:textSize="12dp" />
 
             <TextView
-                android:id="@+id/TextView34"
+                android:id="@+id/com_gongji"
+                style="@style/ResultValueColor"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                style="@style/ResultValueColor"
                 android:text="556.22"
-                android:textSize="12dp"
-                />
+                android:textSize="12dp" />
 
         </TableRow>
 

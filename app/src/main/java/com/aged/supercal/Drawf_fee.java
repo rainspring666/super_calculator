@@ -1,12 +1,13 @@
 package com.aged.supercal;
 
-import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
+import android.os.Bundle;
 import android.widget.Button;
+import android.view.View;
+import android.content.Intent;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.text.DecimalFormat;
 
 public class Drawf_fee extends AppCompatActivity implements View.OnClickListener{
     Button drawf_btn;
@@ -42,11 +43,13 @@ public class Drawf_fee extends AppCompatActivity implements View.OnClickListener
             //跳转结果界面
             Intent i = new Intent(Drawf_fee.this, Drawf_result.class);
 
+            DecimalFormat df=new DecimalFormat( "###############0.00 ");
+
             //传值
             Bundle bundle = new Bundle();
-            bundle.putString("drawfafterincome", String.valueOf(drawffee-result));
-            bundle.putString("drawfbeforeincome", String.valueOf(drawffee));
-            bundle.putString("drawftotaltax", String.valueOf(result));
+            bundle.putString("drawfafterincome", df.format(drawffee-result));
+            bundle.putString("drawfbeforeincome", df.format(drawffee));
+            bundle.putString("drawftotaltax", df.format(result));
             i.putExtras(bundle);
 
             startActivity(i);

@@ -1,12 +1,14 @@
 package com.aged.supercal;
 
-import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
+import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.view.View;
+import android.content.Intent;
+import java.text.DecimalFormat;
+
 
 public class Month_salary extends AppCompatActivity implements View.OnClickListener{
 
@@ -58,6 +60,11 @@ public class Month_salary extends AppCompatActivity implements View.OnClickListe
     }
 
     public void onClick(View v){
+
+        //传值
+        Bundle bundle = new Bundle();
+        DecimalFormat df=new DecimalFormat( "###############0.00 ");
+
         if(tax_start_point.getText().toString().equals("")){
             Toast.makeText(Month_salary.this, "输入不能为空",Toast.LENGTH_SHORT).show();
         }else if(tax_before_point.getText().toString().equals("")){
@@ -103,53 +110,90 @@ public class Month_salary extends AppCompatActivity implements View.OnClickListe
             double fundperson=Double.parseDouble(fund_person.getText().toString());
             double fundcompany=Double.parseDouble(fund_company.getText().toString());
 
-            double result_person=0,  result_company=0; //保存个人缴纳总和，单位总和
+            double result_person=0,  result_company=0,result_person_fund=0,result_company_fund=0, result_1=0;   //保存工资利息 //保存个人缴纳总和，单位总和
 
             if(taxbefore_point<=2400){
                 //个人缴纳
-                double old_tax_person=2400*oldperson;  //养老
-                double medical_tax_person=2400*medicalperson;  //医疗
-                double unemployee_tax_person=2400*unemployeeperson;  //失业
-                double injury_tax_person=2400*injuryperson;  //工伤
-                double birth_tax_person=2400*birthperson;  //生育
-                double fund_tax_person=2400*fundperson;  //公积金
+                double old_tax_person=2400*oldperson*0.01;  //养老
+                double medical_tax_person=2400*medicalperson*0.01;  //医疗
+                double unemployee_tax_person=2400*unemployeeperson*0.01;  //失业
+                double injury_tax_person=2400*injuryperson*0.01;  //工伤
+                double birth_tax_person=2400*birthperson*0.01;  //生育
+                double fund_tax_person=2400*fundperson*0.01;  //公积金
 
-                result_person=old_tax_person+medical_tax_person+unemployee_tax_person+injury_tax_person+birth_tax_person+fund_tax_person;
+                bundle.putString("old_taxperson", df.format(old_tax_person));  //个人养老
+                bundle.putString("medical_taxperson", df.format(medical_tax_person));  //个人医疗
+                bundle.putString("unemployee_taxperson", df.format(unemployee_tax_person));  //个人失业
+                bundle.putString("injury_taxperson", df.format(injury_tax_person));  //个人工伤
+                bundle.putString("birth_taxperson", df.format(birth_tax_person));  //个人生育
+                bundle.putString("fund_taxperson", df.format(fund_tax_person));  //个人公积金
+
+
+                result_person_fund=fund_tax_person;//个人公积金
+                result_person=old_tax_person+medical_tax_person+unemployee_tax_person+injury_tax_person+birth_tax_person+fund_tax_person; //个人社保
 
                 //单位缴纳
-                double old_tax_company=2400*oldcompany;  //养老
-                double medical_tax_conmpany=2400*medicalcompany;  //医疗
-                double unemployee_tax_company=2400*unemployeecompany;  //失业
-                double injury_tax_company=2400*injurycompany;  //工伤
-                double birth_tax_company=2400*birthcompany;  //生育
-                double fund_tax_company=2400*fundcompany;  //公积金
+                double old_tax_company=2400*oldcompany*0.01;  //养老
+                double medical_tax_conmpany=2400*medicalcompany*0.01;  //医疗
+                double unemployee_tax_company=2400*unemployeecompany*0.01;  //失业
+                double injury_tax_company=2400*injurycompany*0.01;  //工伤
+                double birth_tax_company=2400*birthcompany*0.01;  //生育
+                double fund_tax_company=2400*fundcompany*0.01;  //公积金
 
-                result_company=old_tax_company+medical_tax_conmpany+unemployee_tax_company+injury_tax_company+birth_tax_company+fund_tax_company;
+                bundle.putString("old_taxcompany", df.format(old_tax_company));  //个人养老
+                bundle.putString("medical_taxcompany", df.format(medical_tax_conmpany));  //个人医疗
+                bundle.putString("employee_tax_company", df.format(unemployee_tax_company));  //个人失业
+                bundle.putString("injury_taxcompany", df.format(injury_tax_company));  //个人工伤
+                bundle.putString("birth_taxcompany", df.format(birth_tax_company));  //个人生育
+                bundle.putString("fund_taxcompany", df.format(fund_tax_company));  //个人公积金
+
+                Toast.makeText(Month_salary.this, df.format(medical_tax_conmpany),Toast.LENGTH_SHORT).show();
+
+
+                result_company_fund=fund_tax_company; //公司公积金
+                result_company=old_tax_company+medical_tax_conmpany+unemployee_tax_company+injury_tax_company+birth_tax_company+fund_tax_company;  //公司社保
 
             }
 
 
             if(taxbefore_point>2400){
                 //个人缴纳
-                double old_tax_person=taxbefore_point*oldperson;  //养老
-                double medical_tax_person=taxbefore_point*medicalperson;  //医疗
-                double unemployee_tax_person=taxbefore_point*unemployeeperson;  //失业
-                double injury_tax_person=taxbefore_point*injuryperson;  //工伤
-                double birth_tax_person=taxbefore_point*birthperson;  //生育
-                double fund_tax_person=taxbefore_point*fundperson;  //公积金
+                double old_tax_person=taxbefore_point*oldperson*0.01;  //养老
+                double medical_tax_person=taxbefore_point*medicalperson*0.01;  //医疗
+                double unemployee_tax_person=taxbefore_point*unemployeeperson*0.01;  //失业
+                double injury_tax_person=taxbefore_point*injuryperson*0.01;  //工伤
+                double birth_tax_person=taxbefore_point*birthperson*0.01;  //生育
+                double fund_tax_person=taxbefore_point*fundperson*0.01;  //公积金
 
+
+                bundle.putString("old_taxperson", df.format(old_tax_person));  //个人养老
+                bundle.putString("medical_taxperson", df.format(medical_tax_person));  //个人医疗
+                bundle.putString("unemployee_taxperson", df.format(unemployee_tax_person));  //个人失业
+                bundle.putString("injury_taxperson", df.format(injury_tax_person));  //个人工伤
+                bundle.putString("birth_taxperson", df.format(birth_tax_person));  //个人生育
+                bundle.putString("fund_taxperson", df.format(fund_tax_person));  //个人公积金
+
+                result_person_fund=fund_tax_person;//个人公积金
                 result_person=old_tax_person+medical_tax_person+unemployee_tax_person+injury_tax_person+birth_tax_person+fund_tax_person;
 
 
                 //单位缴纳
-                double old_tax_company=taxbefore_point*oldcompany;  //养老
-                double medical_tax_conmpany=taxbefore_point*medicalcompany;  //医疗
-                double unemployee_tax_company=taxbefore_point*unemployeecompany;  //失业
-                double injury_tax_company=taxbefore_point*injurycompany;  //工伤
-                double birth_tax_company=taxbefore_point*birthcompany;  //生育
-                double fund_tax_company=taxbefore_point*fundcompany;  //公积金
+                double old_tax_company=taxbefore_point*oldcompany*0.01;  //养老
+                double medical_tax_company=taxbefore_point*medicalcompany*0.01;  //医疗
+                double unemployee_tax_company=taxbefore_point*unemployeecompany*0.01;  //失业
+                double injury_tax_company=taxbefore_point*injurycompany*0.01;  //工伤
+                double birth_tax_company=taxbefore_point*birthcompany*0.01;  //生育
+                double fund_tax_company=taxbefore_point*fundcompany*0.01;  //公积金
 
-                result_company=old_tax_company+medical_tax_conmpany+unemployee_tax_company+injury_tax_company+birth_tax_company+fund_tax_company;
+                bundle.putString("old_taxcompany", df.format(old_tax_company));  //个人养老
+                bundle.putString("medical_taxcompany", df.format(medical_tax_company));  //个人医疗
+                bundle.putString("employee_tax_company", df.format(unemployee_tax_company));  //个人失业
+                bundle.putString("injury_taxcompany", df.format(injury_tax_company));  //个人工伤
+                bundle.putString("birth_taxcompany", df.format(birth_tax_company));  //个人生育
+                bundle.putString("fund_taxcompany", df.format(fund_tax_company));  //个人公积金
+
+                result_company_fund=fund_tax_company; //公司公积金
+                result_company=old_tax_company+medical_tax_company+unemployee_tax_company+injury_tax_company+birth_tax_company+fund_tax_company;
             }
 
             double tax_person=0;   //保存个人所得税结果
@@ -158,15 +202,36 @@ public class Month_salary extends AppCompatActivity implements View.OnClickListe
             }
             if(taxbefore_point>taxstart_point){   //大于起征点
                 tax_person=taxbefore_point-taxstart_point-result_person;
-              //  if()
+                //计算工资利息
 
+                if(tax_person<=3000)  result_1=tax_person*0.03;   //不超过3000
+                if(3000<tax_person && tax_person<=12000)   result_1=tax_person*0.10-210;    //3000-12000
+                if(12000<tax_person && tax_person<=25000)   result_1=tax_person*0.20-1410;   //12000-25000
+                if(25000<tax_person && tax_person<=35000)  result_1=tax_person*0.25-2660;   //25000-35000
+                if(35000<tax_person && tax_person<=55000)  result_1=tax_person*0.30-4410;   //35000-55000
+                if(55000<tax_person && tax_person<=80000)  result_1=tax_person*0.35-7160;   //55000-80000
+                if(tax_person>80000)                           result_1=tax_person*0.45-15160;   //大于80000                           tax_person=tax_person*0.45-181920;   //大于9600000
             }
 
 
-               //跳转结果界面
-               Intent i=new Intent(Month_salary.this,Month_salary_result.class);
+            //跳转结果界面
+            Intent i=new Intent(Month_salary.this,Month_salary_result.class);
 
-               startActivity(i);
+
+            bundle.putString("tax_daoshou_income", df.format(taxbefore_point-result_person-result_1));  //到手工资
+            bundle.putString("tax_before_income", df.format(taxbefore_point));  //税前收入
+            bundle.putString("person_socail_shebao", df.format(result_person-result_person_fund));  //个人社保
+            bundle.putString("person_socail_funds", df.format(result_person_fund));  //个人公积金
+            bundle.putString("person_total_tax", df.format(result_1));  //个人公积金
+            bundle.putString("person_total_jiaona", df.format(result_person+result_1));  //个人缴纳
+            bundle.putString("company_total_jiaona", df.format(result_company));  //个人缴纳
+
+            Toast.makeText(Month_salary.this, df.format(result_person_fund),Toast.LENGTH_SHORT).show();
+
+            i.putExtras(bundle);
+
+
+            startActivity(i);
 
         }
     }

@@ -1,12 +1,13 @@
 package com.aged.supercal;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
+import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+import android.view.View;
 import android.widget.Toast;
+import java.text.DecimalFormat;
 
 public class EndYear_Cal_Activity extends AppCompatActivity implements View.OnClickListener{
 
@@ -39,9 +40,9 @@ public class EndYear_Cal_Activity extends AppCompatActivity implements View.OnCl
     public void onClick(View v){
 
         if(end_year_money.getText().toString().equals("")){
-             Toast.makeText(EndYear_Cal_Activity.this, "年终奖输入不能为空",Toast.LENGTH_SHORT).show();
+            Toast.makeText(EndYear_Cal_Activity.this, "年终奖输入不能为空",Toast.LENGTH_SHORT).show();
         }else if(end_month_income.getText().toString().equals("")){
-             Toast.makeText(EndYear_Cal_Activity.this, "奖金输入不能为空",Toast.LENGTH_SHORT).show();
+            Toast.makeText(EndYear_Cal_Activity.this, "奖金输入不能为空",Toast.LENGTH_SHORT).show();
         }else if(!end_year_money.getText().toString().matches("-[0-9]+(.[0-9]+)?|[0-9]+(.[0-9]+)?") && !end_month_income.getText().toString().matches("-[0-9]+(.[0-9]+)?|[0-9]+(.[0-9]+)?")){  //判断是否全为数字
             Toast.makeText(EndYear_Cal_Activity.this, "输入中包含非数字字符",Toast.LENGTH_SHORT).show();
         }else{
@@ -49,7 +50,7 @@ public class EndYear_Cal_Activity extends AppCompatActivity implements View.OnCl
             double endyearmoney=Double.parseDouble(end_year_money.getText().toString());
             double endmonthincome=Double.parseDouble(end_month_income.getText().toString());
 
-             //计算工资利息
+            //计算工资利息
             double result_1=0;   //保存工资利息
             if(endmonthincome<=3000)  result_1=endmonthincome*0.03;   //不超过3000
             if(3000<endmonthincome && endmonthincome<=12000)   result_1=endmonthincome*0.10;    //3000-12000
@@ -58,11 +59,11 @@ public class EndYear_Cal_Activity extends AppCompatActivity implements View.OnCl
             if(35000<endmonthincome && endmonthincome<=55000)  result_1=endmonthincome*0.30;   //35000-55000
             if(55000<endmonthincome && endmonthincome<=80000)  result_1=endmonthincome*0.35;   //55000-80000
             if(endmonthincome>80000)                           result_1=endmonthincome*0.45;   //大于80000
-            
+
 
             //计算年终奖税率
             double result_2=0;  //保存年终奖个人所得税奖金
-            
+
             if(endyearmoney<=5000)                               result_2=0;  //不超过3000
             if(endyearmoney/12<3000)                             result_2=endyearmoney*0.03;   //3000-12000
             if(3000<endyearmoney/12 && endyearmoney/12<=12000)   result_2=endyearmoney*0.10-210;   //3000-12000
@@ -74,18 +75,18 @@ public class EndYear_Cal_Activity extends AppCompatActivity implements View.OnCl
 
 
 
-           // Toast.makeText(EndYear_Cal_Activity.this, String.valueOf(result_1),Toast.LENGTH_SHORT).show();
-           // Toast.makeText(EndYear_Cal_Activity.this, String.valueOf(result_2),Toast.LENGTH_SHORT).show();
+            // Toast.makeText(EndYear_Cal_Activity.this, String.valueOf(result_1),Toast.LENGTH_SHORT).show();
+            // Toast.makeText(EndYear_Cal_Activity.this, String.valueOf(result_2),Toast.LENGTH_SHORT).show();
 
             //跳转结果界面
             Intent i=new Intent(EndYear_Cal_Activity.this,EndYear_Cal_Result.class);
 
-
+            DecimalFormat df=new DecimalFormat( "###############0.00 ");
             //传值
             Bundle bundle = new Bundle();
-            bundle.putString("after_income", String.valueOf(endyearmoney+endmonthincome-result_1-result_2));
-            bundle.putString("before_income", String.valueOf(endyearmoney+endmonthincome));
-            bundle.putString("whole_tax", String.valueOf(result_1+result_2));
+            bundle.putString("after_income", df.format(endyearmoney+endmonthincome-result_1-result_2));
+            bundle.putString("before_income", df.format(endmonthincome));
+            bundle.putString("whole_tax", df.format(result_1+result_2));
             i.putExtras(bundle);
 
             startActivity(i);

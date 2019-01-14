@@ -1,12 +1,15 @@
 package com.aged.supercal;
 
-import android.content.Intent;
-import android.os.Bundle;
+
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
+import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+import android.view.View;
 import android.widget.Toast;
+import android.content.Intent;
+import java.text.DecimalFormat;
+
 
 public class Property_transfer extends AppCompatActivity implements View.OnClickListener{
 
@@ -55,11 +58,12 @@ public class Property_transfer extends AppCompatActivity implements View.OnClick
             //跳转结果界面
             Intent i=new Intent(Property_transfer.this,Property_transfer_result.class);
 
+            DecimalFormat df=new DecimalFormat( "###############0.00 ");
             //传值
             Bundle bundle = new Bundle();
-            bundle.putString("property_after_income", String.valueOf(propertypriamount+propertypriamount-result));
-            bundle.putString("property_before_income", String.valueOf(propertytotalamount));
-            bundle.putString("property_total_tax", String.valueOf(result));
+            bundle.putString("property_after_income", df.format(propertypriamount+propertypriamount-result));
+            bundle.putString("property_before_income", df.format(propertytotalamount));
+            bundle.putString("property_total_tax", df.format(result));
             i.putExtras(bundle);
 
             startActivity(i);

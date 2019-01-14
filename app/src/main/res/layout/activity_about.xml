@@ -49,7 +49,6 @@
             android:text="超级计算器"
             android:gravity="center"
              />
-
     </LinearLayout>
 
     <LinearLayout

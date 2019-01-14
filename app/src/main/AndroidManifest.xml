@@ -1,29 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.aged.supercal">
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher1"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_round1"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".LaunchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name="com.aged.supercal.DigitalCalActivity"
-            android:label="@string/digitalcal_name">
-        </activity>
-        <activity android:name=".LoanActivity"
-            android:label="@string/loan"></activity>
+            android:name=".MainActivity"
+            android:label="@string/app_name" />
+        <!-- 贷款和公积金 -->
+        <activity
+            android:name=".LoanActivity"
+            android:label="@string/loan"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".LoanResultActivity"
+            android:label="@string/loanresult"
+            android:parentActivityName=".LoanActivity" />
+        <!-- 计算器 -->
+        <activity
+            android:name=".Digital_calculate"
+            android:label="@string/digitalcal_name"
+            android:parentActivityName=".MainActivity" />
 
+        <!-- 年终奖 -->
+        <activity
+            android:name=".EndYear_Cal_Activity"
+            android:label="@string/nianzhongjiang"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".EndYear_Cal_Result"
+            android:label="@string/jieguo"
+            android:parentActivityName=".EndYear_Cal_Activity" />
+        <!-- 劳务所得 -->
+        <activity
+            android:name=".Drawf_fee"
+            android:label="@string/laowusuode"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Drawf_result"
+            android:label="@string/jieguo"
+            android:parentActivityName=".Drawf_fee" />
+
+        <!-- 个体工商经营 -->
+        <activity
+            android:name=".Individual_operation"
+            android:label="@string/getigongshang"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Individual_result"
+            android:label="@string/jieguo"
+            android:parentActivityName=".Individual_operation" />
+
+        <!-- 财产转让 -->
+        <activity
+            android:name=".Property_transfer"
+            android:label="@string/caichanzhuanrang"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Property_transfer_result"
+            android:label="@string/jieguo"
+            android:parentActivityName=".Property_transfer" />
+
+        <!-- 月薪税 -->
+        <activity
+            android:name=".Month_salary"
+            android:label="@string/yuexinshui"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Month_salary_result"
+            android:label="@string/jieguo"
+            android:parentActivityName=".Month_salary" />
+        <!-- 意外所得 -->
+        <activity
+            android:name=".Accident_Income"
+            android:label="@string/yiwaisuode"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Accident_result"
+            android:label="@string/jieguo"
+            android:parentActivityName=".Accident_Income" />
+        <!-- 税率表 -->
+        <activity
+            android:name=".RateActivity"
+            android:label="@string/paf"
+            android:parentActivityName=".LoanActivity" />
+        <activity
+            android:name=".AboutActivity"
+            android:label="@string/about"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".AboutTeamActivity"
+            android:label="@string/aboutteam"
+            android:parentActivityName=".AboutActivity"></activity>
+        <activity android:name=".RatePersonActivity"
+            android:label="@string/personrate"
+            android:parentActivityName=".Individual_operation"></activity>
     </application>
 
 </manifest>

@@ -3,4 +3,16 @@
     <string name="digitalcal_name">基本计算器</string>
     <string name="textview">TextView</string>
     <string name="loan">贷款计算</string>
+    <string name="paf">利率表</string>
+    <string name="personrate">个体工商经营税率表</string>
+    <string name="loanresult">计算结果</string>
+    <string name="yuexinshui">月薪税</string>
+    <string name="nianzhongjiang">年终奖</string>
+    <string name="laowusuode">劳务所得</string>
+    <string name="yiwaisuode">意外所得</string>
+    <string name="caichanzhuanrang">财产转让</string>
+    <string name="getigongshang">个体工商经营</string>
+    <string name="jieguo">计算结果</string>
+    <string name="about">关于</string>
+    <string name="aboutteam">关于我们</string>
 </resources>

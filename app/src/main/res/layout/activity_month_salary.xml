@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorButtonNormal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="380dp"
+        android:layout_marginTop="25dp"
+        android:background="@android:color/background_light"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:fadingEdge="none"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="12dp"
+                style="@style/LabTextColor"
+                android:text="税前工资"
+                android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/tax_before_point"
+                style="@style/ResultValueColor"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="请输入一个有效整数..."
+                android:inputType="number"
+                android:maxLength="10" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="12dp"
+                style="@style/LabTextColor"
+                android:text="个税起征点"
+                android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/tax_start_point"
+                style="@style/ResultValueColor"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:text="5000"
+                android:inputType="number"
+                 />
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="290dp"
+            android:orientation="vertical">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:gravity="center"
+                    style="@style/LabTextColor"
+                    android:text="缴纳项目"
+                    android:textSize="15dp"
+                    />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:gravity="center"
+                    style="@style/LabTextColor"
+                    android:text="个人缴纳(%)"
+                    android:textSize="15dp"
+                    />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:gravity="center"
+                    style="@style/LabTextColor"
+                    android:text="单位缴纳(%)"
+                    android:textSize="15dp"
+                    />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:gravity="center"
+                    style="@style/LabTextColor"
+                    android:text="养老"
+                    android:textSize="12dp"
+                    />
+
+                <EditText
+                    android:id="@+id/old_person"
+                    style="@style/ResultValueColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="8.0"
+                    android:inputType="number"
+                    android:textSize="12dp" />
+
+                <EditText
+                    android:id="@+id/old_company"
+                    style="@style/ResultValueColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="19.0"
+                    android:inputType="number"
+                    android:textSize="12dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:gravity="center"
+                    style="@style/LabTextColor"
+                    android:text="医疗"
+                    android:textSize="12dp"
+                    />
+
+                <EditText
+                    android:id="@+id/medical_person"
+                    style="@style/ResultValueColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="2.0"
+                    android:inputType="number"
+                    android:textSize="12dp" />
+
+                <EditText
+                    android:id="@+id/medical_company"
+                    style="@style/ResultValueColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="8.0"
+                    android:inputType="number"
+                    android:textSize="12dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:gravity="center"
+                    style="@style/LabTextColor"
+                    android:text="失业"
+                    android:textSize="12dp"
+                    />
+
+                <EditText
+                    android:id="@+id/unemployee_person"
+                    style="@style/ResultValueColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="0.5"
+                    android:inputType="number"
+                    android:textSize="12dp" />
+
+                <EditText
+                    android:id="@+id/unemployee_company"
+                    style="@style/ResultValueColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="0.5"
+                    android:inputType="number"
+                    android:textSize="12dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:gravity="center"
+                    style="@style/LabTextColor"
+                    android:text="工伤"
+                    android:textSize="12dp"
+                    />
+
+                <EditText
+                    android:id="@+id/injury_person"
+                    style="@style/ResultValueColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="0.0"
+                    android:inputType="number"
+                    android:textSize="12dp" />
+
+                <EditText
+                    android:id="@+id/injury_company"
+                    style="@style/ResultValueColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="0.6"
+                    android:inputType="number"
+                    android:textSize="12dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:id="@+id/textView21"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:gravity="center"
+                    style="@style/LabTextColor"
+                    android:text="生育"
+                    android:textSize="12dp"
+                    />
+
+                <EditText
+                    android:id="@+id/birth_person"
+                    style="@style/ResultValueColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="0.0"
+                    android:inputType="number"
+                    android:textSize="12dp" />
+
+                <EditText
+                    android:id="@+id/birth_company"
+                    style="@style/ResultValueColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="0.5"
+                    android:inputType="number"
+                    android:textSize="12dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:id="@+id/textView22"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:gravity="center"
+                    style="@style/LabTextColor"
+                    android:text="公积金"
+                    android:textSize="12dp"
+                    />
+
+                <EditText
+                    android:id="@+id/fund_person"
+                    style="@style/ResultValueColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="7.0"
+                    android:inputType="number"
+                    android:textSize="12dp" />
+
+                <EditText
+                    android:id="@+id/fund_company"
+                    style="@style/ResultValueColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="7.0"
+                    android:inputType="number"
+                    android:textSize="12dp" />
+
+            </TableRow>
+
+        </TableLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/month_salary_tax"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:background="#00CED1"
+        android:text="计算"
+        android:textColor="#fff"
+        android:textSize="22dp" />
+</LinearLayout>

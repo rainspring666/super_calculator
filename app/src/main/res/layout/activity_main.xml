@@ -25,35 +25,38 @@
 
             <TextView
                 android:id="@+id/digital_cal"
-                android:layout_width="128dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:background="#4b423d"
                 android:drawableTop="@mipmap/ph_a_c"
                 android:gravity="center"
-                android:padding="19dp"
+                android:padding="17dp"
                 android:text="@string/digitalcal_name"
                 android:textAlignment="center"
                 android:textColor="@android:color/white" />
             <TextView
                 android:id="@+id/textView_loan"
-                android:layout_width="128dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:background="#564d44"
                 android:drawableTop="@mipmap/ph_b_c"
                 android:gravity="center"
-                android:padding="19dp"
+                android:padding="17dp"
                 android:text="@string/loan"
                 android:textAlignment="center"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:id="@+id/textView5"
-                android:layout_width="128dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:background="#5a5148"
                 android:drawableTop="@mipmap/ph_gj"
                 android:gravity="center"
-                android:padding="19dp"
+                android:padding="17dp"
                 android:text="公积金贷款"
                 android:textAlignment="center"
                 android:textColor="@android:color/white" />
@@ -70,36 +73,39 @@
 
             <TextView
                 android:id="@+id/month_salary"
-                android:layout_width="128dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:background="#564d44"
                 android:drawableTop="@mipmap/ph_yx"
                 android:gravity="center"
-                android:padding="19dp"
+                android:padding="17dp"
                 android:text="月薪税"
                 android:textAlignment="center"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:id="@+id/end_year"
-                android:layout_width="128dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:background="#5a5148"
                 android:drawableTop="@mipmap/ph_e_c"
                 android:gravity="center"
-                android:padding="19dp"
+                android:padding="17dp"
                 android:text="年终奖"
                 android:textAlignment="center"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:id="@+id/drawf_fee"
-                android:layout_width="128dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:background="#4b423d"
                 android:drawableTop="@mipmap/ph_gc"
                 android:gravity="center"
-                android:padding="19dp"
+                android:padding="17dp"
                 android:text="劳务所得"
                 android:textAlignment="center"
                 android:textColor="@android:color/white" />
@@ -116,36 +122,39 @@
 
             <TextView
                 android:id="@+id/incident_income"
-                android:layout_width="128dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:background="#5a5148"
                 android:drawableTop="@mipmap/ph_yws"
                 android:gravity="center"
-                android:padding="19dp"
+                android:padding="17dp"
                 android:text="意外所得"
                 android:textAlignment="center"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:id="@+id/property_transfer"
-                android:layout_width="128dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:background="#4b423d"
                 android:drawableTop="@mipmap/ph_ccz"
                 android:gravity="center"
-                android:padding="19dp"
+                android:padding="17dp"
                 android:text="财产转让"
                 android:textAlignment="center"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:id="@+id/Individual_operation"
-                android:layout_width="128dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:background="#564d44"
                 android:drawableTop="@mipmap/ph_gtg"
                 android:gravity="center"
-                android:padding="19dp"
+                android:padding="17dp"
                 android:text="个体工商经营"
                 android:textAlignment="center"
                 android:textColor="@android:color/white" />
@@ -161,36 +170,39 @@
 
             <TextView
                 android:id="@+id/textView12"
-                android:layout_width="128dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:background="#4b423d"
                 android:drawableTop="@mipmap/ph_lc"
                 android:gravity="center"
-                android:padding="19dp"
+                android:padding="17dp"
                 android:text="理财计算"
                 android:textAlignment="center"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:id="@+id/textView11"
-                android:layout_width="128dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:background="#564d44"
                 android:drawableTop="@mipmap/ph_zhd"
                 android:gravity="center"
-                android:padding="19dp"
+                android:padding="17dp"
                 android:text="组合贷款计算"
                 android:textAlignment="center"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:id="@+id/textView3"
-                android:layout_width="128dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:background="#5a5148"
                 android:drawableTop="@mipmap/ph_d_c"
                 android:gravity="center"
-                android:padding="19dp"
+                android:padding="17dp"
                 android:text="亲属称呼换算"
                 android:textAlignment="center"
                 android:textColor="@android:color/white" />

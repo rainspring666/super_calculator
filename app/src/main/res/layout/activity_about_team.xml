@@ -20,7 +20,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:paddingTop="20dp"
-            android:text="关于我们"
+            android:text="关于开发者"
             android:textSize="17dp" />
 
         <View
@@ -37,31 +37,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="right"
-            android:paddingRight="30dp"
             android:paddingTop="13dp"
-            android:text="老年养生队(排名不分先后)" />
+            android:paddingRight="30dp"
+            android:text="老年养生队" />
 
     </LinearLayout>
 
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:layout_weight="1">
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="老大：老年人樊某某"
-            android:paddingRight="200dp"
-            android:background="#fff"
-            android:gravity="center"
-            android:textSize="16dp"/>
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -70,14 +51,38 @@
         android:layout_weight="5"
         android:layout_marginTop="15dp">
 
+        <View
+            android:layout_width="fill_parent"
+            android:layout_marginTop="5dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#c0c0c0" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:paddingRight="200dp"
+            android:text="组长：樊静钰"
+            android:textSize="16dp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_marginTop="5dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#c0c0c0" />
+
         <TextView
             android:id="@+id/textView7"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="逻辑：老年人刘某某"
-            android:paddingRight="200dp"
-            android:background="#fff"
             android:gravity="center"
+            android:paddingRight="200dp"
+            android:text="逻辑：刘金科"
             android:textSize="16dp" />
 
         <View
@@ -92,11 +97,10 @@
             android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="逻辑：老年人彭某某"
-            android:paddingRight="200dp"
-            android:background="#fff"
             android:gravity="center"
-            android:textSize="16dp"  />
+            android:paddingRight="200dp"
+            android:text="逻辑：彭玉全"
+            android:textSize="16dp" />
 
         <View
             android:layout_width="fill_parent"
@@ -110,11 +114,10 @@
             android:id="@+id/textView9"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="UI：老年人宋某某"
-            android:paddingRight="200dp"
-            android:background="#fff"
             android:gravity="center"
-            android:textSize="16dp"  />
+            android:paddingRight="200dp"
+            android:text="视图：宋钰瑾"
+            android:textSize="16dp" />
 
         <View
             android:layout_width="fill_parent"
@@ -128,11 +131,10 @@
             android:id="@+id/textView12"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="UI：老年人贺某某"
-            android:paddingRight="200dp"
-            android:background="#fff"
             android:gravity="center"
-            android:textSize="16dp"  />
+            android:paddingRight="200dp"
+            android:text="视图：贺李杰"
+            android:textSize="16dp" />
 
         <View
             android:layout_width="fill_parent"
@@ -146,10 +148,9 @@
             android:id="@+id/textView11"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="UI：老年人苏某某"
-            android:paddingRight="200dp"
-            android:background="#fff"
             android:gravity="center"
+            android:paddingRight="200dp"
+            android:text="视图：苏豪玮"
             android:textSize="16dp" />
 
         <View
@@ -164,11 +165,17 @@
             android:id="@+id/textView10"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="SM：老年人马某某"
-            android:paddingRight="200dp"
-            android:background="#fff"
             android:gravity="center"
-            android:textSize="16dp"  />
+            android:paddingRight="200dp"
+            android:text="敏捷：马永刚"
+            android:textSize="16dp" />
+        <View
+            android:layout_width="fill_parent"
+            android:layout_marginTop="5dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#c0c0c0" />
     </LinearLayout>
 
     <LinearLayout

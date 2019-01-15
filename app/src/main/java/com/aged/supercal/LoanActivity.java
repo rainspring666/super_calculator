@@ -210,14 +210,14 @@ public class LoanActivity extends AppCompatActivity {
                 }
                 if (deleteLastChar) {
                     // 设置新的截取的字符串
-                    editText_rate.setText(s.toString().substring(0, s.toString().length() - 1));
+                    editText_money.setText(s.toString().substring(0, s.toString().length() - 1));
                     // 光标强制到末尾
-                    editText_rate.setSelection(editText_rate.getText().length());
+                    editText_money.setSelection(editText_money.getText().length());
                 }
                 // 以小数点开头，前面自动加上 "0"
                 if (s.toString().startsWith(".")) {
-                    editText_rate.setText("0" + s);
-                    editText_rate.setSelection(editText_rate.getText().length());
+                    editText_money.setText("0" + s);
+                    editText_money.setSelection(editText_money.getText().length());
                 }
             }
         });
@@ -227,8 +227,8 @@ public class LoanActivity extends AppCompatActivity {
                 EditText editText1 = (EditText) v;
                 // 以小数点结尾，去掉小数点
                 if (!hasFocus && editText1.getText() != null && editText1.getText().toString().endsWith(".")) {
-                    editText_rate.setText(editText1.getText().subSequence(0, editText1.getText().length() - 1));
-                    editText_rate.setSelection(editText_rate.getText().length());
+                    editText_money.setText(editText1.getText().subSequence(0, editText1.getText().length() - 1));
+                    editText_money.setSelection(editText_money.getText().length());
                 }
             }
         });

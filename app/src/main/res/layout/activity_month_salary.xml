@@ -73,6 +73,7 @@
                 android:ems="10"
                 android:text="5000"
                 android:paddingTop="3dp"
+                android:maxLength="10"
                 android:inputType="number"
                  />
         </LinearLayout>
@@ -181,7 +182,8 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="8.0"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
                     android:textSize="14dp" />
 
                 <EditText
@@ -191,7 +193,8 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="19.0"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
                     android:textSize="14dp" />
 
             </TableRow>
@@ -221,7 +224,8 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="2.0"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
                     android:textSize="14dp" />
 
                 <EditText
@@ -231,7 +235,8 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="8.0"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
                     android:textSize="14dp" />
 
             </TableRow>
@@ -261,7 +266,8 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="0.5"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
                     android:textSize="14dp" />
 
                 <EditText
@@ -271,7 +277,8 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="0.5"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
                     android:textSize="14dp" />
 
             </TableRow>
@@ -301,7 +308,8 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="0.0"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
                     android:textSize="14dp" />
 
                 <EditText
@@ -341,7 +349,8 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="0.0"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
                     android:textSize="14dp" />
 
                 <EditText
@@ -351,7 +360,8 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="0.5"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
                     android:textSize="14dp" />
 
             </TableRow>
@@ -381,7 +391,8 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="7.0"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
                     android:textSize="14dp" />
 
                 <EditText
@@ -391,7 +402,8 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="7.0"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
                     android:textSize="14dp" />
 
             </TableRow>
@@ -407,7 +419,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:background="#00CED1"
         android:text="计算"
         android:textColor="#fff"

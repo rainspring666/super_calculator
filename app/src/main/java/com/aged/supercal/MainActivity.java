@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent=new Intent();
             AlertDialog alertDialog1 = new AlertDialog.Builder(MainActivity.this)
                     .setTitle("提示")//标题
-                    .setMessage("此功能尚未开发")//内容
+                    .setMessage("此功能开发中")//内容
                     .setIcon(R.mipmap.ic_launcher1)//图标
                     .create();
 
@@ -139,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.textView5:
                     intent.setClass(MainActivity.this,LoanActivity.class);
                     startActivity(intent);
+                    break;
                 case R.id.textView12:
                     alertDialog1.show();
                     break;

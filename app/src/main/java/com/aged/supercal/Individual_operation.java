@@ -13,10 +13,13 @@ public class Individual_operation extends AppCompatActivity implements View.OnCl
 
     Button Individual_btn;
     private TextView Individual_income;
+    private TextView textView_person_rate;
 
     public void Intitview(){
         Individual_btn = (Button) findViewById(R.id.Individual_btn);  //计算按钮
         Individual_income=(TextView) findViewById(R.id.Individual_income);
+        textView_person_rate = (TextView)findViewById(R.id.textView_person_rate);
+        textView_person_rate.setOnClickListener(new TextViewListener());
         Individual_btn.setOnClickListener(this);
 
     }
@@ -57,6 +60,16 @@ public class Individual_operation extends AppCompatActivity implements View.OnCl
             i.putExtras(bundle);
 
             startActivity(i);
+        }
+
+
+    }
+    class TextViewListener implements View.OnClickListener{
+        @Override
+        public void onClick(View v){
+            Intent intent = new Intent();
+            intent.setClass(Individual_operation.this,RatePersonActivity.class);
+            startActivity(intent);
         }
     }
 }

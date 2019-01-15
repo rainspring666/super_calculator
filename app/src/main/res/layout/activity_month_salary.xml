@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="460dp"
+        android:layout_height="420dp"
         android:layout_marginTop="25dp"
         android:background="@android:color/background_light"
         android:orientation="vertical">
@@ -18,7 +18,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:fadingEdge="none"
             android:orientation="horizontal">
 
@@ -28,7 +28,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:padding="12dp"
                 style="@style/LabTextColor"
                 android:text="税前工资(元)"
                 android:textSize="18dp" />
@@ -41,6 +40,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:ems="10"
+                android:paddingTop="3dp"
                 android:hint="请输入一个有效整数..."
                 android:inputType="number"
                 android:maxLength="10" />
@@ -50,7 +50,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:orientation="horizontal">
 
             <TextView
@@ -59,7 +59,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:padding="12dp"
                 style="@style/LabTextColor"
                 android:text="个税起征点"
                 android:textSize="18dp" />
@@ -73,6 +72,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:text="5000"
+                android:paddingTop="3dp"
                 android:inputType="number"
                  />
         </LinearLayout>
@@ -80,7 +80,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:orientation="horizontal">
 
             <TextView
@@ -102,7 +102,8 @@
                 <Spinner
                     android:id="@+id/spinner"
                     android:layout_width="100dp"
-                    android:layout_height="40dp"
+                    android:layout_height="35dp"
+                    android:padding="1dp"
                     android:layout_marginRight="30dp"
                     android:layout_weight="1" />
             </LinearLayout>
@@ -381,7 +382,7 @@
                     android:layout_weight="1"
                     android:text="7.0"
                     android:inputType="number"
-                    android:textSize="12dp" />
+                    android:textSize="14dp" />
 
                 <EditText
                     android:id="@+id/fund_company"
@@ -406,7 +407,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:background="#00CED1"
         android:text="计算"
         android:textColor="#fff"

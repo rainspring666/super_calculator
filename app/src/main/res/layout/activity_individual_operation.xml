@@ -38,7 +38,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="请输入收入（元）"
+                android:hint="请输入收入"
                 android:inputType="number"
                 android:maxLength="10" />
         </LinearLayout>
@@ -63,11 +63,12 @@
         android:gravity="bottom">
 
         <TextView
-            android:id="@+id/textView_rate"
+            android:id="@+id/textView_person_rate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="利率表"
+            android:text="参考利率表"
             android:gravity="center"
+            android:textSize="14dp"
             android:layout_alignParentBottom="true"
             android:paddingBottom="10dp"
             />

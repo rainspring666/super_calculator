@@ -40,7 +40,6 @@
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="（元）"
                 android:inputType="number" />
         </LinearLayout>
 
@@ -66,7 +65,6 @@
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="（元）"
                 android:inputType="number" />
 
         </LinearLayout>
@@ -93,7 +91,6 @@
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="（元）"
                 android:inputType="number" />
 
         </LinearLayout>

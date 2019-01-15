@@ -171,8 +171,8 @@
             <TextView
                 android:id="@+id/textView12"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="#4b423d"
                 android:drawableTop="@mipmap/ph_lc"
                 android:gravity="center"

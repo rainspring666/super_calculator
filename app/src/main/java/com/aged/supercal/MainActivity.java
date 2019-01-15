@@ -9,21 +9,31 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-
+import android.app.AlertDialog;
 public class MainActivity extends AppCompatActivity {
 
     private TextView textView_loan;//贷款计算
     private TextView textView_paf;//公积金
+    private TextView textView12;//10
+    private TextView textView11;//11
+    private TextView textView3;//12
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        textView11 = (TextView)findViewById(R.id.textView11);
+        textView12 = (TextView)findViewById(R.id.textView12);
+        textView3 = (TextView)findViewById(R.id.textView3);
         textView_loan = (TextView)findViewById(R.id.textView_loan);
         textView_paf = (TextView)findViewById(R.id.textView5);
         textView_paf.setOnClickListener(new TextViewListener());
         textView_loan.setOnClickListener(new TextViewListener());
+        textView11.setOnClickListener(new TextViewListener());
+        textView12.setOnClickListener(new TextViewListener());
+        textView3.setOnClickListener(new TextViewListener());
 
         ///////////////
         //计算器页面跳转------1-------
@@ -114,14 +124,30 @@ public class MainActivity extends AppCompatActivity {
     class TextViewListener implements View.OnClickListener{
         @Override
         public void onClick(View v) {
-            if(v.getId() == R.id.textView_loan){
-                Intent intent=new Intent();
-                intent.setClass(MainActivity.this,LoanActivity.class);
-                startActivity(intent);
-            }else if(v.getId() == R.id.textView5);{
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this,LoanActivity.class);
-                startActivity(intent);
+            Intent intent=new Intent();
+            AlertDialog alertDialog1 = new AlertDialog.Builder(MainActivity.this)
+                    .setTitle("提示")//标题
+                    .setMessage("此功能尚未开发")//内容
+                    .setIcon(R.mipmap.ic_launcher1)//图标
+                    .create();
+
+            switch (v.getId()){
+                case R.id.textView_loan:
+                    intent.setClass(MainActivity.this,LoanActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.textView5:
+                    intent.setClass(MainActivity.this,LoanActivity.class);
+                    startActivity(intent);
+                case R.id.textView12:
+                    alertDialog1.show();
+                    break;
+                case R.id.textView11:
+                    alertDialog1.show();
+                    break;
+                case R.id.textView3:
+                    alertDialog1.show();
+                    break;
             }
 
         }

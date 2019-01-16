@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v){
                 Intent i=new Intent(MainActivity.this,Digital_calculate.class);
                 startActivity(i);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             }});
         //月薪税收入跳转------4-------
         TextView month_salary= findViewById(R.id.month_salary);

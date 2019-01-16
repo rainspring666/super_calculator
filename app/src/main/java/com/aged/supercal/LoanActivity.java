@@ -48,12 +48,11 @@ public class LoanActivity extends AppCompatActivity {
         if((money_str.equals("")||year_str.equals("")||rate_str.equals(""))){
             Toast.makeText(LoanActivity.this,"请输入需要数据",Toast.LENGTH_SHORT).show();
         }else{
-            yearRate = Double.parseDouble(rate_str)/100.00;
-            invest = Double.parseDouble(money_str)*10000;
-            year = Integer.parseInt(year_str);
-            totalMonth = 12* year;
-
-        }
+                yearRate = Double.parseDouble(rate_str)/100.00;
+                invest = Double.parseDouble(money_str)*10000;
+                year = Integer.parseInt(year_str);
+                totalMonth = 12* year;
+            }
 
     }
 
@@ -284,14 +283,21 @@ public class LoanActivity extends AppCompatActivity {
                 startActivity(intent);
             }
 
-            if(state == 1){
-                calLoan_xi();
-            }else if(state == 2){
-                calLoan_jin();
-            }else{
+            if(year == 0 || yearRate == 0){
+                Toast.makeText(LoanActivity.this,"贷款年限和利率都不能为0哦",Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoanActivity.this,"亦可参考下方利率表",Toast.LENGTH_SHORT).show();
+            }else {
+
+                if (state == 1) {
+                    calLoan_xi();
+                } else if (state == 2) {
+                    calLoan_jin();
+                } else {
 //                Toast.makeText(LoanActivity.this,totalMoney+"",Toast.LENGTH_SHORT).show();
-                Toast.makeText(LoanActivity.this,"请选择计算方式",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoanActivity.this, "你需要选择计算方式", Toast.LENGTH_SHORT).show();
+                }
             }
+
         }
     }
 

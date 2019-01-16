@@ -284,8 +284,7 @@ public class LoanActivity extends AppCompatActivity {
             }
 
             if(year == 0 || yearRate == 0){
-                Toast.makeText(LoanActivity.this,"贷款年限和利率都不能为0哦",Toast.LENGTH_SHORT).show();
-                Toast.makeText(LoanActivity.this,"亦可参考下方利率表",Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoanActivity.this,"贷款年限或利率不能为0哦",Toast.LENGTH_SHORT).show();
             }else {
 
                 if (state == 1) {
@@ -294,7 +293,7 @@ public class LoanActivity extends AppCompatActivity {
                     calLoan_jin();
                 } else {
 //                Toast.makeText(LoanActivity.this,totalMoney+"",Toast.LENGTH_SHORT).show();
-                    Toast.makeText(LoanActivity.this, "你需要选择计算方式", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoanActivity.this, "请选择你需要的计算方式", Toast.LENGTH_SHORT).show();
                 }
             }
 

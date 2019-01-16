@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v){
                 Intent i=new Intent(MainActivity.this,Month_salary.class);
                 startActivity(i);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             }});
 
         //年终将收入页面跳转------5-------
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v){
                 Intent i=new Intent(MainActivity.this,EndYear_Cal_Activity.class);
                 startActivity(i);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             }});
         //劳务所得收入页面跳转----6-------
         TextView drawf_fee = findViewById(R.id.drawf_fee);
@@ -69,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v){
                 Intent i=new Intent(MainActivity.this,Drawf_fee.class);
                 startActivity(i);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             }});
         //意外收入页面跳转-------7-------
         TextView incident_income = findViewById(R.id.incident_income);
@@ -77,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v){
                 Intent i=new Intent(MainActivity.this,Accident_Income.class);
                 startActivity(i);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             }});
         //财产转让界面----------8-------
         TextView property_transfer= findViewById(R.id.property_transfer);
@@ -85,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v){
                 Intent i=new Intent(MainActivity.this,Property_transfer.class);
                 startActivity(i);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             }});
         //个人经营页面----------9-------
         TextView Individual_operation= findViewById(R.id.Individual_operation);
@@ -93,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v){
                 Intent i=new Intent(MainActivity.this,Individual_operation.class);
                 startActivity(i);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             }});
 
         if(savedInstanceState==null){
@@ -128,18 +134,23 @@ public class MainActivity extends AppCompatActivity {
             Intent intent=new Intent();
             AlertDialog alertDialog1 = new AlertDialog.Builder(MainActivity.this)
                     .setTitle("提示")//标题
-                    .setMessage("此功能尚未开发")//内容
+                    .setMessage("此功能开发中")//内容
                     .setIcon(R.mipmap.ic_launcher1)//图标
                     .create();
 
             switch (v.getId()){
                 case R.id.textView_loan:
                     intent.setClass(MainActivity.this,LoanActivity.class);
+                    intent.putExtra("flag", 1);
                     startActivity(intent);
+                    overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                     break;
                 case R.id.textView5:
                     intent.setClass(MainActivity.this,LoanActivity.class);
+                    intent.putExtra("flag", 2);
                     startActivity(intent);
+                    overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                    break;
                 case R.id.textView12:
                     alertDialog1.show();
                     break;

@@ -21,9 +21,9 @@ public class Property_transfer extends AppCompatActivity implements View.OnClick
 
     public void Intitview(){
         property_btn = (Button) findViewById(R.id.property_btn);  //计算按钮
-        property_total_amount=(TextView) findViewById(R.id.property_total_amount);
-        property_pri_amount=(TextView) findViewById(R.id.property_pri_amount);
-        property_stable_amount=(TextView) findViewById(R.id.property_stable_amount);
+        property_total_amount=(TextView) findViewById(R.id.property_total_amount);//收入总额
+        property_pri_amount=(TextView) findViewById(R.id.property_pri_amount);//财产原值
+        property_stable_amount=(TextView) findViewById(R.id.property_stable_amount);//合理税费
 
         property_btn.setOnClickListener(this);
 
@@ -36,6 +36,12 @@ public class Property_transfer extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.activity_property_transfer);
 
         Intitview();   //调用初始化函数
+    }
+
+    @Override
+    protected void onPause() {
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        super.onPause();
     }
 
     public void onClick(View v){
@@ -61,7 +67,8 @@ public class Property_transfer extends AppCompatActivity implements View.OnClick
             DecimalFormat df=new DecimalFormat( "###############0.00 ");
             //传值
             Bundle bundle = new Bundle();
-            bundle.putString("property_after_income", df.format(propertypriamount+propertypriamount-result));
+            bundle.putString("property_after_income",
+                    df.format((propertytotalamount-propertypriamount-propertystableamount)*0.8));
             bundle.putString("property_before_income", df.format(propertytotalamount));
             bundle.putString("property_total_tax", df.format(result));
             i.putExtras(bundle);

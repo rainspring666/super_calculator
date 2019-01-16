@@ -1,12 +1,12 @@
 package com.aged.supercal.Tools;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.math.BigDecimal;
 
 public class InfixInToDuffix {
 
@@ -108,6 +108,7 @@ public class InfixInToDuffix {
 
         for (int i = 0; i < arr.length; i++) {                                    //此处就是上面说的运算过程， 因为list.remove的缘故，所以取出最后一个数个最后两个数  都是size-2
             int size = list.size();
+            DecimalFormat df=new DecimalFormat( "###############0.00 ");
             switch (arr[i]) {
                 case "+":
                     BigDecimal a = new BigDecimal(list.remove(size - 2)).add(new BigDecimal(list.remove(size - 2)));
@@ -124,6 +125,7 @@ public class InfixInToDuffix {
                 case "/":
                     BigDecimal d = new BigDecimal(list.remove(size - 2)).divide(new BigDecimal(list.remove(size - 2)), 10, BigDecimal.ROUND_HALF_UP);
                     list.add(String.valueOf(d));
+
                     break;
                 default:
                     list.add(arr[i]);

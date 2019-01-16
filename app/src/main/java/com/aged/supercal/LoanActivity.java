@@ -48,12 +48,11 @@ public class LoanActivity extends AppCompatActivity {
         if((money_str.equals("")||year_str.equals("")||rate_str.equals(""))){
             Toast.makeText(LoanActivity.this,"请输入需要数据",Toast.LENGTH_SHORT).show();
         }else{
-            yearRate = Double.parseDouble(rate_str)/100.00;
-            invest = Double.parseDouble(money_str)*10000;
-            year = Integer.parseInt(year_str);
-            totalMonth = 12* year;
-
-        }
+                yearRate = Double.parseDouble(rate_str)/100.00;
+                invest = Double.parseDouble(money_str)*10000;
+                year = Integer.parseInt(year_str);
+                totalMonth = 12* year;
+            }
 
     }
 
@@ -127,6 +126,15 @@ public class LoanActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loan);
+        Intent intent = getIntent();
+        int flag = intent.getIntExtra("flag", 6);
+        if(flag == 1){
+            this.setTitle("商业贷款");
+        }
+        else if(flag == 2){
+            this.setTitle("公积金贷款");
+        }
+
 
         textView_paftable = (TextView)findViewById(R.id.textView15);
         textView_paftable.setOnClickListener(new TextViewListener());
@@ -210,14 +218,14 @@ public class LoanActivity extends AppCompatActivity {
                 }
                 if (deleteLastChar) {
                     // 设置新的截取的字符串
-                    editText_rate.setText(s.toString().substring(0, s.toString().length() - 1));
+                    editText_money.setText(s.toString().substring(0, s.toString().length() - 1));
                     // 光标强制到末尾
-                    editText_rate.setSelection(editText_rate.getText().length());
+                    editText_money.setSelection(editText_money.getText().length());
                 }
                 // 以小数点开头，前面自动加上 "0"
                 if (s.toString().startsWith(".")) {
-                    editText_rate.setText("0" + s);
-                    editText_rate.setSelection(editText_rate.getText().length());
+                    editText_money.setText("0" + s);
+                    editText_money.setSelection(editText_money.getText().length());
                 }
             }
         });
@@ -227,12 +235,18 @@ public class LoanActivity extends AppCompatActivity {
                 EditText editText1 = (EditText) v;
                 // 以小数点结尾，去掉小数点
                 if (!hasFocus && editText1.getText() != null && editText1.getText().toString().endsWith(".")) {
-                    editText_rate.setText(editText1.getText().subSequence(0, editText1.getText().length() - 1));
-                    editText_rate.setSelection(editText_rate.getText().length());
+                    editText_money.setText(editText1.getText().subSequence(0, editText1.getText().length() - 1));
+                    editText_money.setSelection(editText_money.getText().length());
                 }
             }
         });
 
+    }
+
+    @Override
+    protected void onPause() {
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        super.onPause();
     }
 
     class RadioGroupListener implements RadioGroup.OnCheckedChangeListener{
@@ -269,14 +283,20 @@ public class LoanActivity extends AppCompatActivity {
                 startActivity(intent);
             }
 
-            if(state == 1){
-                calLoan_xi();
-            }else if(state == 2){
-                calLoan_jin();
-            }else{
+            if(year == 0 || yearRate == 0){
+                Toast.makeText(LoanActivity.this,"贷款年限或利率不能为0哦",Toast.LENGTH_SHORT).show();
+            }else {
+
+                if (state == 1) {
+                    calLoan_xi();
+                } else if (state == 2) {
+                    calLoan_jin();
+                } else {
 //                Toast.makeText(LoanActivity.this,totalMoney+"",Toast.LENGTH_SHORT).show();
-                Toast.makeText(LoanActivity.this,"请选择计算方式",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoanActivity.this, "请选择你需要的计算方式", Toast.LENGTH_SHORT).show();
+                }
             }
+
         }
     }
 

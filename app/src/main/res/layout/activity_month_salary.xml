@@ -28,13 +28,13 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                style="@style/LabTextColor"
+                android:textColor="@color/colorLabText"
                 android:text="税前工资(元)"
                 android:textSize="18dp" />
 
             <EditText
                 android:id="@+id/tax_before_point"
-                style="@style/ResultValueColor"
+                android:textColor="@color/colorPrimary"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="30dp"
@@ -59,13 +59,13 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                style="@style/LabTextColor"
+                android:textColor="@color/colorLabText"
                 android:text="个税起征点"
                 android:textSize="18dp" />
 
             <EditText
                 android:id="@+id/tax_start_point"
-                style="@style/ResultValueColor"
+                android:textColor="@color/colorPrimary"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="30dp"
@@ -73,6 +73,7 @@
                 android:ems="10"
                 android:text="5000"
                 android:paddingTop="3dp"
+                android:maxLength="10"
                 android:inputType="number"
                  />
         </LinearLayout>
@@ -123,7 +124,7 @@
 
                 <TextView
                     android:id="@+id/textView14"
-                    style="@style/LabTextColor"
+                    android:textColor="@color/colorLabText"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -139,14 +140,14 @@
                     android:layout_weight="1"
                     android:padding="12dp"
                     android:gravity="center"
-                    style="@style/LabTextColor"
+                    android:textColor="@color/colorLabText"
                     android:text="个人缴纳(%)"
                     android:textSize="15dp"
                     />
 
                 <TextView
                     android:id="@+id/textView16"
-                    style="@style/LabTextColor"
+                    android:textColor="@color/colorLabText"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -165,7 +166,7 @@
 
                 <TextView
                     android:id="@+id/textView17"
-                    style="@style/LabTextColor"
+                    android:textColor="@color/colorLabText"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -176,22 +177,24 @@
 
                 <EditText
                     android:id="@+id/old_person"
-                    style="@style/ResultValueColor"
+                    android:textColor="@color/colorPrimary"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="8.0"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
                     android:textSize="14dp" />
 
                 <EditText
                     android:id="@+id/old_company"
-                    style="@style/ResultValueColor"
+                    android:textColor="@color/colorPrimary"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="19.0"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
                     android:textSize="14dp" />
 
             </TableRow>
@@ -209,29 +212,31 @@
                     android:layout_weight="1"
                     android:padding="10dp"
                     android:gravity="center"
-                    style="@style/LabTextColor"
+                    android:textColor="@color/colorLabText"
                     android:text="医疗"
                     android:textSize="14dp"
                     />
 
                 <EditText
                     android:id="@+id/medical_person"
-                    style="@style/ResultValueColor"
+                    android:textColor="@color/colorPrimary"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="2.0"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
                     android:textSize="14dp" />
 
                 <EditText
                     android:id="@+id/medical_company"
-                    style="@style/ResultValueColor"
+                    android:textColor="@color/colorPrimary"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="8.0"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
                     android:textSize="14dp" />
 
             </TableRow>
@@ -249,29 +254,31 @@
                     android:layout_weight="1"
                     android:padding="10dp"
                     android:gravity="center"
-                    style="@style/LabTextColor"
+                    android:textColor="@color/colorLabText"
                     android:text="失业"
                     android:textSize="14dp"
                     />
 
                 <EditText
                     android:id="@+id/unemployee_person"
-                    style="@style/ResultValueColor"
+                    android:textColor="@color/colorPrimary"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="0.5"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
                     android:textSize="14dp" />
 
                 <EditText
                     android:id="@+id/unemployee_company"
-                    style="@style/ResultValueColor"
+                    android:textColor="@color/colorPrimary"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="0.5"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
                     android:textSize="14dp" />
 
             </TableRow>
@@ -289,24 +296,25 @@
                     android:layout_weight="1"
                     android:padding="10dp"
                     android:gravity="center"
-                    style="@style/LabTextColor"
+                    android:textColor="@color/colorLabText"
                     android:text="工伤"
                     android:textSize="14dp"
                     />
 
                 <EditText
                     android:id="@+id/injury_person"
-                    style="@style/ResultValueColor"
+                    android:textColor="@color/colorPrimary"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="0.0"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
                     android:textSize="14dp" />
 
                 <EditText
                     android:id="@+id/injury_company"
-                    style="@style/ResultValueColor"
+                    android:textColor="@color/colorPrimary"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -329,29 +337,31 @@
                     android:layout_weight="1"
                     android:padding="10dp"
                     android:gravity="center"
-                    style="@style/LabTextColor"
+                    android:textColor="@color/colorLabText"
                     android:text="生育"
                     android:textSize="14dp"
                     />
 
                 <EditText
                     android:id="@+id/birth_person"
-                    style="@style/ResultValueColor"
+                    android:textColor="@color/colorPrimary"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="0.0"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
                     android:textSize="14dp" />
 
                 <EditText
                     android:id="@+id/birth_company"
-                    style="@style/ResultValueColor"
+                    android:textColor="@color/colorPrimary"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="0.5"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
                     android:textSize="14dp" />
 
             </TableRow>
@@ -369,29 +379,31 @@
                     android:layout_weight="1"
                     android:padding="10dp"
                     android:gravity="center"
-                    style="@style/LabTextColor"
+                    android:textColor="@color/colorLabText"
                     android:text="公积金"
                     android:textSize="14dp"
                     />
 
                 <EditText
                     android:id="@+id/fund_person"
-                    style="@style/ResultValueColor"
+                    android:textColor="@color/colorPrimary"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="7.0"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
                     android:textSize="14dp" />
 
                 <EditText
                     android:id="@+id/fund_company"
-                    style="@style/ResultValueColor"
+                    android:textColor="@color/colorPrimary"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="7.0"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
                     android:textSize="14dp" />
 
             </TableRow>
@@ -407,7 +419,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:background="#00CED1"
         android:text="计算"
         android:textColor="#fff"

@@ -34,4 +34,10 @@ public class Property_transfer_result extends AppCompatActivity {
         property_afteramount.setText(property_after_income);
         property_totaltax.setText(property_total_tax);
     }
+
+    @Override
+    protected void onPause() {
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        super.onPause();
+    }
 }

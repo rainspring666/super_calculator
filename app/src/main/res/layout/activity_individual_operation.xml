@@ -38,7 +38,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="请输入收入"
+                android:hint="请输入有效整数"
                 android:inputType="number"
                 android:maxLength="10" />
         </LinearLayout>
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="50dp"
         android:background="#00CED1"
         android:text="计算"
         android:textColor="#fff"

@@ -34,6 +34,12 @@ public class Accident_Income extends AppCompatActivity implements View.OnClickLi
         Intitview();   //调用初始化函数
     }
 
+    @Override
+    protected void onPause() {
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        super.onPause();
+    }
+
     public void onClick(View v) {
 
         if (accident_income.getText().toString().equals("")) {
@@ -45,7 +51,6 @@ public class Accident_Income extends AppCompatActivity implements View.OnClickLi
             //跳转结果界面
             Intent i = new Intent(Accident_Income.this, Accident_result.class);
 
-
             //中奖收入
             if (accident_classfy.isChecked()) {
                 if (eaccidentincome <= 10000) result = 0;
@@ -53,7 +58,6 @@ public class Accident_Income extends AppCompatActivity implements View.OnClickLi
 
                 //传值
                 DecimalFormat df=new DecimalFormat( "###############0.00 ");
-
                 //传值
                 Bundle bundle = new Bundle();
                 bundle.putString("accident_after_income", df.format(eaccidentincome - result));
@@ -65,9 +69,7 @@ public class Accident_Income extends AppCompatActivity implements View.OnClickLi
             }
             //其他
             else if (accident_classfy_qita.isChecked()) {
-
                 result = eaccidentincome * 0.2;
-
                 DecimalFormat df=new DecimalFormat( "###############0.00 ");
 
                 //传值
@@ -78,7 +80,6 @@ public class Accident_Income extends AppCompatActivity implements View.OnClickLi
                 i.putExtras(bundle);
 
                 //  Toast.makeText(Accident_Income.this, df.format(eaccidentincome - result), Toast.LENGTH_SHORT).show();
-
 
                 startActivity(i);
             } else {

@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="到手所得"
+            android:text="财产转让所得"
             android:paddingLeft="10dp"/>
     </LinearLayout>
 

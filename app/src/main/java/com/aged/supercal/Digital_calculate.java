@@ -96,6 +96,14 @@ public class Digital_calculate extends AppCompatActivity implements View.OnClick
 
     }
 
+
+
+    @Override
+    protected void onPause() {
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        super.onPause();
+    }
+
     public void onClick(View v) {
 
         int last = 0;
@@ -104,11 +112,17 @@ public class Digital_calculate extends AppCompatActivity implements View.OnClick
         }
         switch (v.getId()) {
             case R.id.btn_0:
-                pending = pending.append("0");
-                et_input.setText(pending);
                 if(flag==true) {
                     pending=pending.delete(0,pending.length());
                     flag=false;
+                }
+                if(judge3()){   //判断是否在可以输入为0
+                    pending = pending.append("0");
+                    et_input.setText(pending);
+                    if(flag==true) {
+                        pending=pending.delete(0,pending.length());
+                        flag=false;
+                    }
                 }
                 break;
             case R.id.btn_1:
@@ -116,72 +130,91 @@ public class Digital_calculate extends AppCompatActivity implements View.OnClick
                     pending=pending.delete(0,pending.length());
                     flag=false;
                 }
-                pending = pending.append("1");
-                et_input.setText(pending);
+                if(judge4()){
+                    pending = pending.append("1");
+                    et_input.setText(pending);
+                }
+
                 break;
             case R.id.btn_2:
                 if(flag==true) {
                     pending=pending.delete(0,pending.length());
                     flag=false;
                 }
-                pending = pending.append("2");
-                et_input.setText(pending);
+                if(judge4()){
+                    pending = pending.append("2");
+                    et_input.setText(pending);
+                }
                 break;
             case R.id.btn_3:
                 if(flag==true) {
                     pending=pending.delete(0,pending.length());
                     flag=false;
                 }
-                pending = pending.append("3");
-                et_input.setText(pending);
+                if(judge4()){
+                    pending = pending.append("3");
+                    et_input.setText(pending);
+                }
                 break;
             case R.id.btn_4:
                 if(flag==true) {
                     pending=pending.delete(0,pending.length());
                     flag=false;
                 }
-                pending = pending.append("4");
-                et_input.setText(pending);
+                if(judge4()){
+                    pending = pending.append("4");
+                    et_input.setText(pending);
+                }
                 break;
             case R.id.btn_5:
                 if(flag==true) {
                     pending=pending.delete(0,pending.length());
                     flag=false;
                 }
-                pending = pending.append("5");
-                et_input.setText(pending);
+                if(judge4()){
+                    pending = pending.append("5");
+                    et_input.setText(pending);
+                }
                 break;
             case R.id.btn_6:
                 if(flag==true) {
                     pending=pending.delete(0,pending.length());
                     flag=false;
                 }
-                pending = pending.append("6");
-                et_input.setText(pending);
+                if(judge4()){
+                    pending = pending.append("6");
+                    et_input.setText(pending);
+                }
                 break;
             case R.id.btn_7:
                 if(flag==true) {
                     pending=pending.delete(0,pending.length());
                     flag=false;
                 }
-                pending = pending.append("7");
-                et_input.setText(pending);
+                if(judge4()){
+                    pending = pending.append("7");
+                    et_input.setText(pending);
+                }
                 break;
             case R.id.btn_8:
                 if(flag==true) {
                     pending=pending.delete(0,pending.length());
                     flag=false;
                 }
-                pending = pending.append("8");
-                et_input.setText(pending);
+                if(judge4()){
+                    pending = pending.append("8");
+                    et_input.setText(pending);
+                }
                 break;
             case R.id.btn_9:
                 if(flag==true) {
                     pending=pending.delete(0,pending.length());
                     flag=false;
                 }
-                pending = pending.append("9");
-                et_input.setText(pending);
+                if(judge4()){
+                    pending = pending.append("9");
+                    et_input.setText(pending);
+                }
                 break;
             case R.id.btn_plus:
                 flag=false;
@@ -211,6 +244,8 @@ public class Digital_calculate extends AppCompatActivity implements View.OnClick
                     flag=false;
                 }
                 if(judge1()){
+                    if(pending.length()==0 || last=='+' || last=='-' || last=='*' || last=='/')
+                    pending = pending.append("0");
                     pending = pending.append(".");
                     et_input.setText(pending);
                 } break;
@@ -255,25 +290,35 @@ public class Digital_calculate extends AppCompatActivity implements View.OnClick
                       }
                       catch(Exception ex) {
                           result="出错";
+                          flag=true;
                           Toast.makeText(Digital_calculate.this, "请重新输入",Toast.LENGTH_SHORT).show();
                       }
                       pending=pending.delete(0,pending.length());  //清空文本框内容
 
-                      if(result.matches("-[0-9]+(.[0-9]+)?|[0-9]+(.[0-9]+)?")){
-                         /* 使用java正则表达式去掉多余的.与0 */
-                          if(result.indexOf(".") > 0){
-                              result = result.replaceAll("0+?$", "");//去掉多余的0
-                              result = result.replaceAll("[.]$", "");//如最后一位是.则去掉
-                          }
+                      if(result.indexOf("0.")!=0 && result.indexOf("0")==0){
+                          result="0";
+                      }
 
-                          pending=pending.append(result);
-                          Toast.makeText(Digital_calculate.this, "结果是：" + result, Toast.LENGTH_SHORT).show();
+                      if(flag==false){
+                          if(result.matches("-[0-9]+(.[0-9]+)?|[0-9]+(.[0-9]+)?")){
+                              /* 使用java正则表达式去掉多余的.与0 */
+                              if(result.indexOf(".") > 0){
+                                  result = result.replaceAll("0+?$", "");//去掉多余的0
+                                  result = result.replaceAll("[.]$", "");//如最后一位是.则去掉
+                              }
+
+                              pending=pending.append(result);
+                              Toast.makeText(Digital_calculate.this, "结果是：" + result, Toast.LENGTH_SHORT).show();
+                          }
+                          else{
+                              et_input.setText(pending+"="+result);   //输出结果
+                          }
                       }
                       else{
-                          et_input.setText(pending+"="+result);   //输出结果
+                          pending=pending.append("出错");
                       }
-                      flag=true;//设置标识位
-                      mTimeHandler.sendEmptyMessageDelayed(0, 800);  //刷新页面
+                          flag=true;//设置标识位
+                          mTimeHandler.sendEmptyMessageDelayed(0, 800);  //刷新页面
                   }  break;
             default: break;
         }
@@ -321,6 +366,24 @@ public class Digital_calculate extends AppCompatActivity implements View.OnClick
          return 2;       //右括号大于左括号
     }    //右括号判断
 
+    private boolean judge3(){      //0输入判断
+
+        InfixInToDuffix inf1=new InfixInToDuffix();
+        if(inf1.toSuffix(pending).matches("-[0]+(.[0]+)?|[0]+(.[0]+)?"))
+            return false;
+        return true;
+    }     //0输入判断
+    private boolean judge4(){      //0输入判断
+        int last1 = 0;
+        if (pending.length() != 0) {
+            last1 = pending.codePointAt(pending.length() - 1);
+        }
+
+        InfixInToDuffix inf1=new InfixInToDuffix();
+        if(inf1.toSuffix(pending).matches("-[0]+(.[0]+)?|[0]+(.[0]+)?") && pending.indexOf(".1")!=-1)
+            pending=pending.delete(pending.length()-1,pending.length());
+            return true;
+    }     //0输入判断
 
    //设置定时器
 

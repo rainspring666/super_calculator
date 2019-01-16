@@ -2,5 +2,10 @@
 <resources>
     <color name="colorPrimary">#000000</color>
     <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#00CED1</color>
+    <color name="colorNetValue">#66cc66</color>
+    <color name="colorLabText">#666666</color>
+    <color name="colorMainAlpha">#4b423d</color>
+    <color name="colorMainBravo">#564d44</color>
+    <color name="colorMainCharlie">#5a5148</color>
 </resources>

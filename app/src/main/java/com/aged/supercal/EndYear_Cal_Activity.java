@@ -37,6 +37,12 @@ public class EndYear_Cal_Activity extends AppCompatActivity implements View.OnCl
 
     }
 
+    @Override
+    protected void onPause() {
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        super.onPause();
+    }
+
     public void onClick(View v){
 
         if(end_year_money.getText().toString().equals("")){

@@ -37,5 +37,11 @@ public class Accident_result extends AppCompatActivity {
         accident_whole_tax.setText(accident_total_tax);
     }
 
+    @Override
+    protected void onPause() {
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        super.onPause();
+    }
+
 
 }

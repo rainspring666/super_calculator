@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 public class LaunchActivity extends Activity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,5 +22,11 @@ public class LaunchActivity extends Activity {
                 LaunchActivity.this.finish();
             }
         }, time);
+    }
+
+    @Override
+    protected void onPause() {
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        super.onPause();
     }
 }

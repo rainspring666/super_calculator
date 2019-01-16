@@ -27,7 +27,7 @@
                 android:gravity="left"
                 android:paddingLeft="18dp"
                 android:paddingTop="5dp"
-                style="@style/LabTextColor"
+                android:textColor="@color/colorLabText"
                 android:text="到手工资" />
         </LinearLayout>
 
@@ -38,7 +38,7 @@
 
             <TextView
                 android:id="@+id/month_real_money"
-                style="@style/NetValueColor"
+                android:textColor="@color/colorNetValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -63,20 +63,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="2"
-                    style="@style/LabTextColor"
+                    android:textColor="@color/colorLabText"
                     android:text="税前工资"
                     android:textSize="15dp"
                     android:gravity="center"/>
 
                 <TextView
                     android:id="@+id/month_before_money"
-                    style="@style/ResultValueColor"
+                    android:textColor="@color/colorPrimary"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="3"
                     android:gravity="center"
                     android:text="7946.00"
-                    android:textSize="21dp" />
+                    android:textSize="18sp"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="0dp"
@@ -89,20 +89,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="2"
-                    style="@style/LabTextColor"
+                    android:textColor="@color/colorLabText"
                     android:text="个人社保"
                     android:textSize="15dp"
                     android:gravity="center" />
 
                 <TextView
                     android:id="@+id/month_real_shebao"
-                    style="@style/ResultValueColor"
+                    android:textColor="@color/colorPrimary"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="3"
                     android:gravity="center"
                     android:text="834.33"
-                    android:textSize="21dp" />
+                    android:textSize="18sp"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="0dp"
@@ -115,20 +115,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="2"
-                    style="@style/LabTextColor"
+                    android:textColor="@color/colorLabText"
                     android:text="个人公积金"
                     android:textSize="15dp"
                     android:gravity="center" />
 
                 <TextView
                     android:id="@+id/month_real_fund"
-                    style="@style/ResultValueColor"
+                    android:textColor="@color/colorPrimary"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="3"
                     android:gravity="center"
                     android:text="556.22"
-                    android:textSize="21dp" />
+                    android:textSize="18sp"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="0dp"
@@ -141,20 +141,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="2"
-                    style="@style/LabTextColor"
+                    android:textColor="@color/colorLabText"
                     android:text="个人所得税"
                     android:textSize="15dp"
                     android:gravity="center" />
 
                 <TextView
                     android:id="@+id/month_real_tax"
-                    style="@style/ResultValueColor"
+                    android:textColor="@color/colorPrimary"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="3"
                     android:gravity="center"
                     android:text="46.66"
-                    android:textSize="21dp" />
+                    android:textSize="18sp"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -184,7 +184,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
-                style="@style/LabTextColor"
+                android:textColor="@color/colorLabText"
                 android:text="个人缴纳金额:"
                 android:textSize="16dp"
                 android:gravity="center"
@@ -192,7 +192,7 @@
 
             <TextView
                 android:id="@+id/month_perreal_jiaona"
-                style="@style/ResultValueColor"
+                android:textColor="@color/colorPrimary"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="5"
@@ -212,14 +212,14 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
-                style="@style/LabTextColor"
+                android:textColor="@color/colorLabText"
                 android:text="单位缴纳金额:"
                 android:textSize="16dp"
                 android:gravity="center" />
 
             <TextView
                 android:id="@+id/month_comreal_money"
-                style="@style/ResultValueColor"
+                android:textColor="@color/colorPrimary"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="5"
@@ -247,7 +247,7 @@
                 android:layout_weight="1"
                 android:padding="12dp"
                 android:gravity="center"
-                style="@style/LabTextColor"
+                android:textColor="@color/colorLabText"
                 android:text="缴纳项目"
                 android:textSize="15dp"
                 />
@@ -259,7 +259,7 @@
                 android:layout_weight="1"
                 android:padding="12dp"
                 android:gravity="center"
-                style="@style/LabTextColor"
+                android:textColor="@color/colorLabText"
                 android:text="个人"
                 android:textSize="15dp"
                 />
@@ -271,7 +271,7 @@
                 android:layout_weight="1"
                 android:padding="12dp"
                 android:gravity="center"
-                style="@style/LabTextColor"
+                android:textColor="@color/colorLabText"
                 android:text="单位"
                 android:textSize="15dp"
                 />
@@ -291,14 +291,14 @@
                 android:layout_weight="1"
                 android:padding="12dp"
                 android:gravity="center"
-                style="@style/LabTextColor"
+                android:textColor="@color/colorLabText"
                 android:text="养老"
                 android:textSize="12dp"
                 />
 
             <TextView
                 android:id="@+id/per_old"
-                style="@style/ResultValueColor"
+                android:textColor="@color/colorPrimary"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -308,7 +308,7 @@
 
             <TextView
                 android:id="@+id/com_old"
-                style="@style/ResultValueColor"
+                android:textColor="@color/colorPrimary"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -331,14 +331,14 @@
                 android:layout_weight="1"
                 android:padding="12dp"
                 android:gravity="center"
-                style="@style/LabTextColor"
+                android:textColor="@color/colorLabText"
                 android:text="医疗"
                 android:textSize="12dp"
                 />
 
             <TextView
                 android:id="@+id/per_med"
-                style="@style/ResultValueColor"
+                android:textColor="@color/colorPrimary"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -348,7 +348,7 @@
 
             <TextView
                 android:id="@+id/com_med"
-                style="@style/ResultValueColor"
+                android:textColor="@color/colorPrimary"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -371,14 +371,14 @@
                 android:layout_weight="1"
                 android:padding="12dp"
                 android:gravity="center"
-                style="@style/LabTextColor"
+                android:textColor="@color/colorLabText"
                 android:text="失业"
                 android:textSize="12dp"
                 />
 
             <TextView
                 android:id="@+id/per_unemploy"
-                style="@style/ResultValueColor"
+                android:textColor="@color/colorPrimary"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -388,7 +388,7 @@
 
             <TextView
                 android:id="@+id/com_unemplo"
-                style="@style/ResultValueColor"
+                android:textColor="@color/colorPrimary"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -411,14 +411,14 @@
                 android:layout_weight="1"
                 android:padding="12dp"
                 android:gravity="center"
-                style="@style/LabTextColor"
+                android:textColor="@color/colorLabText"
                 android:text="工伤"
                 android:textSize="12dp"
                 />
 
             <TextView
                 android:id="@+id/per_injur"
-                style="@style/ResultValueColor"
+                android:textColor="@color/colorPrimary"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -428,7 +428,7 @@
 
             <TextView
                 android:id="@+id/com_inj"
-                style="@style/ResultValueColor"
+                android:textColor="@color/colorPrimary"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -451,14 +451,14 @@
                 android:layout_weight="1"
                 android:padding="12dp"
                 android:gravity="center"
-                style="@style/LabTextColor"
+                android:textColor="@color/colorLabText"
                 android:text="生育"
                 android:textSize="12dp"
                 />
 
             <TextView
                 android:id="@+id/per_birth"
-                style="@style/ResultValueColor"
+                android:textColor="@color/colorPrimary"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -468,7 +468,7 @@
 
             <TextView
                 android:id="@+id/com_birth"
-                style="@style/ResultValueColor"
+                android:textColor="@color/colorPrimary"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -491,14 +491,14 @@
                 android:layout_weight="1"
                 android:padding="12dp"
                 android:gravity="center"
-                style="@style/LabTextColor"
+                android:textColor="@color/colorLabText"
                 android:text="公积金"
                 android:textSize="12dp"
                 />
 
             <TextView
                 android:id="@+id/per_gongji"
-                style="@style/ResultValueColor"
+                android:textColor="@color/colorPrimary"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -508,7 +508,7 @@
 
             <TextView
                 android:id="@+id/com_gongji"
-                style="@style/ResultValueColor"
+                android:textColor="@color/colorPrimary"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

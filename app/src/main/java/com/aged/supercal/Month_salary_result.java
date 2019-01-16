@@ -119,5 +119,11 @@ public class Month_salary_result extends AppCompatActivity {
         com_gongji.setText(fund_taxcompany);
 
     }
+
+    @Override
+    protected void onPause() {
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        super.onPause();
+    }
 }
 

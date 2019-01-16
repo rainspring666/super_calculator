@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.aged.supercal">
 
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"></uses-permission>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher1"
@@ -20,12 +22,14 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" />
+            android:label="@string/app_name"
+            android:launchMode="singleTop"/>
         <!-- 贷款和公积金 -->
         <activity
             android:name=".LoanActivity"
             android:label="@string/loan"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:launchMode="singleTop"/>
         <activity
             android:name=".LoanResultActivity"
             android:label="@string/loanresult"
@@ -40,7 +44,8 @@
         <activity
             android:name=".EndYear_Cal_Activity"
             android:label="@string/nianzhongjiang"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:launchMode="singleTop"/>
         <activity
             android:name=".EndYear_Cal_Result"
             android:label="@string/jieguo"
@@ -49,7 +54,8 @@
         <activity
             android:name=".Drawf_fee"
             android:label="@string/laowusuode"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:launchMode="singleTop"/>
         <activity
             android:name=".Drawf_result"
             android:label="@string/jieguo"
@@ -59,7 +65,8 @@
         <activity
             android:name=".Individual_operation"
             android:label="@string/getigongshang"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:launchMode="singleTop"/>
         <activity
             android:name=".Individual_result"
             android:label="@string/jieguo"
@@ -69,7 +76,8 @@
         <activity
             android:name=".Property_transfer"
             android:label="@string/caichanzhuanrang"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:launchMode="singleTop"/>
         <activity
             android:name=".Property_transfer_result"
             android:label="@string/jieguo"
@@ -79,7 +87,8 @@
         <activity
             android:name=".Month_salary"
             android:label="@string/yuexinshui"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:launchMode="singleTop"/>
         <activity
             android:name=".Month_salary_result"
             android:label="@string/jieguo"
@@ -88,7 +97,8 @@
         <activity
             android:name=".Accident_Income"
             android:label="@string/yiwaisuode"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:launchMode="singleTop"/>
         <activity
             android:name=".Accident_result"
             android:label="@string/jieguo"

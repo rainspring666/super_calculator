@@ -39,4 +39,10 @@ public class EndYear_Cal_Result extends AppCompatActivity {
         Toast.makeText(EndYear_Cal_Result.this,whole_tax,Toast.LENGTH_SHORT).show();*/
 
     }
+
+    @Override
+    protected void onPause() {
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        super.onPause();
+    }
 }

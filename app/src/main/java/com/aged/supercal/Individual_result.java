@@ -37,4 +37,10 @@ public class Individual_result extends AppCompatActivity {
         individual_total_tax.setText(individualtotaltax);
 
     }
+
+    @Override
+    protected void onPause() {
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        super.onPause();
+    }
 }

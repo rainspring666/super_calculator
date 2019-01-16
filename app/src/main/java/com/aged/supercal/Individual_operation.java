@@ -32,6 +32,12 @@ public class Individual_operation extends AppCompatActivity implements View.OnCl
         Intitview();  //初始化
     }
 
+    @Override
+    protected void onPause() {
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        super.onPause();
+    }
+
     public void onClick(View v){
         if(Individual_income.getText().toString().equals("")){
             Toast.makeText(Individual_operation.this, "输入不能为空",Toast.LENGTH_SHORT).show();

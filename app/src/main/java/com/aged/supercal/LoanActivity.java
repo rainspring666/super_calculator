@@ -127,6 +127,15 @@ public class LoanActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loan);
+        Intent intent = getIntent();
+        int flag = intent.getIntExtra("flag", 6);
+        if(flag == 1){
+            this.setTitle("商业贷款");
+        }
+        else if(flag == 2){
+            this.setTitle("公积金贷款");
+        }
+
 
         textView_paftable = (TextView)findViewById(R.id.textView15);
         textView_paftable.setOnClickListener(new TextViewListener());
@@ -233,6 +242,12 @@ public class LoanActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onPause() {
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        super.onPause();
     }
 
     class RadioGroupListener implements RadioGroup.OnCheckedChangeListener{

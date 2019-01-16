@@ -28,6 +28,12 @@ public class Drawf_fee extends AppCompatActivity implements View.OnClickListener
         initView();
     }
 
+    @Override
+    protected void onPause() {
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        super.onPause();
+    }
+
     public void onClick(View v) {
         if (drawf_fee.getText().toString().equals("")) {   //判断是否为空
             Toast.makeText(Drawf_fee.this, "奖金输入不能为空", Toast.LENGTH_SHORT).show();

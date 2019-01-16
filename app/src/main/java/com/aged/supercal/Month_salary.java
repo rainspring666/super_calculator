@@ -130,6 +130,12 @@ public class Month_salary extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    @Override
+    protected void onPause() {
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        super.onPause();
+    }
+
 
     public void onClick(View v){
         //传值
@@ -297,7 +303,7 @@ public class Month_salary extends AppCompatActivity implements View.OnClickListe
             bundle.putString("person_total_jiaona", df.format(result_person+result_1));  //个人缴纳
             bundle.putString("company_total_jiaona", df.format(result_company));  //个人缴纳
 
-            Toast.makeText(Month_salary.this, df.format(result_person_fund),Toast.LENGTH_SHORT).show();
+//            Toast.makeText(Month_salary.this, df.format(result_person_fund),Toast.LENGTH_SHORT).show();
 
             i.putExtras(bundle);
 

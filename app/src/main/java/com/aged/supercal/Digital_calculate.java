@@ -96,6 +96,14 @@ public class Digital_calculate extends AppCompatActivity implements View.OnClick
 
     }
 
+
+
+    @Override
+    protected void onPause() {
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        super.onPause();
+    }
+
     public void onClick(View v) {
 
         int last = 0;
@@ -122,72 +130,91 @@ public class Digital_calculate extends AppCompatActivity implements View.OnClick
                     pending=pending.delete(0,pending.length());
                     flag=false;
                 }
-                pending = pending.append("1");
-                et_input.setText(pending);
+                if(judge4()){
+                    pending = pending.append("1");
+                    et_input.setText(pending);
+                }
+
                 break;
             case R.id.btn_2:
                 if(flag==true) {
                     pending=pending.delete(0,pending.length());
                     flag=false;
                 }
-                pending = pending.append("2");
-                et_input.setText(pending);
+                if(judge4()){
+                    pending = pending.append("2");
+                    et_input.setText(pending);
+                }
                 break;
             case R.id.btn_3:
                 if(flag==true) {
                     pending=pending.delete(0,pending.length());
                     flag=false;
                 }
-                pending = pending.append("3");
-                et_input.setText(pending);
+                if(judge4()){
+                    pending = pending.append("3");
+                    et_input.setText(pending);
+                }
                 break;
             case R.id.btn_4:
                 if(flag==true) {
                     pending=pending.delete(0,pending.length());
                     flag=false;
                 }
-                pending = pending.append("4");
-                et_input.setText(pending);
+                if(judge4()){
+                    pending = pending.append("4");
+                    et_input.setText(pending);
+                }
                 break;
             case R.id.btn_5:
                 if(flag==true) {
                     pending=pending.delete(0,pending.length());
                     flag=false;
                 }
-                pending = pending.append("5");
-                et_input.setText(pending);
+                if(judge4()){
+                    pending = pending.append("5");
+                    et_input.setText(pending);
+                }
                 break;
             case R.id.btn_6:
                 if(flag==true) {
                     pending=pending.delete(0,pending.length());
                     flag=false;
                 }
-                pending = pending.append("6");
-                et_input.setText(pending);
+                if(judge4()){
+                    pending = pending.append("6");
+                    et_input.setText(pending);
+                }
                 break;
             case R.id.btn_7:
                 if(flag==true) {
                     pending=pending.delete(0,pending.length());
                     flag=false;
                 }
-                pending = pending.append("7");
-                et_input.setText(pending);
+                if(judge4()){
+                    pending = pending.append("7");
+                    et_input.setText(pending);
+                }
                 break;
             case R.id.btn_8:
                 if(flag==true) {
                     pending=pending.delete(0,pending.length());
                     flag=false;
                 }
-                pending = pending.append("8");
-                et_input.setText(pending);
+                if(judge4()){
+                    pending = pending.append("8");
+                    et_input.setText(pending);
+                }
                 break;
             case R.id.btn_9:
                 if(flag==true) {
                     pending=pending.delete(0,pending.length());
                     flag=false;
                 }
-                pending = pending.append("9");
-                et_input.setText(pending);
+                if(judge4()){
+                    pending = pending.append("9");
+                    et_input.setText(pending);
+                }
                 break;
             case R.id.btn_plus:
                 flag=false;
@@ -217,6 +244,8 @@ public class Digital_calculate extends AppCompatActivity implements View.OnClick
                     flag=false;
                 }
                 if(judge1()){
+                    if(pending.length()==0 || last=='+' || last=='-' || last=='*' || last=='/')
+                    pending = pending.append("0");
                     pending = pending.append(".");
                     et_input.setText(pending);
                 } break;
@@ -339,16 +368,22 @@ public class Digital_calculate extends AppCompatActivity implements View.OnClick
 
     private boolean judge3(){      //0输入判断
 
+        InfixInToDuffix inf1=new InfixInToDuffix();
+        if(inf1.toSuffix(pending).matches("-[0]+(.[0]+)?|[0]+(.[0]+)?"))
+            return false;
+        return true;
+    }     //0输入判断
+    private boolean judge4(){      //0输入判断
         int last1 = 0;
         if (pending.length() != 0) {
             last1 = pending.codePointAt(pending.length() - 1);
         }
-        InfixInToDuffix inf1=new InfixInToDuffix();
-        if(pending.indexOf("0.")==-1 && last1=='0' && !inf1.toSuffix(pending).matches("-[1-9]+(.[1-9]+)?|[1-9]+(.[1-9]+)?"))
-            return false;
-        return true;
-    }     //0输入判断
 
+        InfixInToDuffix inf1=new InfixInToDuffix();
+        if(inf1.toSuffix(pending).matches("-[0]+(.[0]+)?|[0]+(.[0]+)?") && pending.indexOf(".1")!=-1)
+            pending=pending.delete(pending.length()-1,pending.length());
+            return true;
+    }     //0输入判断
 
    //设置定时器
 

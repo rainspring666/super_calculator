@@ -34,6 +34,12 @@ public class Accident_Income extends AppCompatActivity implements View.OnClickLi
         Intitview();   //调用初始化函数
     }
 
+    @Override
+    protected void onPause() {
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        super.onPause();
+    }
+
     public void onClick(View v) {
 
         if (accident_income.getText().toString().equals("")) {

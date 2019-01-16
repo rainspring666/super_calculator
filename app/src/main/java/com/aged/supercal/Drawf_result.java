@@ -36,4 +36,10 @@ public class Drawf_result extends AppCompatActivity {
         drawf_total_tax.setText(drawftotaltax);
         drawf_before_income.setText(drawfbeforeincome);
     }
+
+    @Override
+    protected void onPause() {
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        super.onPause();
+    }
 }

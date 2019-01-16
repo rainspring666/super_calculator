@@ -28,7 +28,7 @@
                 android:paddingLeft="18dp"
                 android:paddingTop="5dp"
                 android:textColor="@color/colorLabText"
-                android:text="到手工资" />
+                android:text="到手工资(元)" />
         </LinearLayout>
 
         <LinearLayout
@@ -42,7 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:paddingLeft="5dp"
+                android:paddingLeft="18dp"
                 android:text="￥6508.79"
                 android:textSize="25dp" />
         </LinearLayout>
@@ -64,7 +64,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="2"
                     android:textColor="@color/colorLabText"
-                    android:text="税前工资"
+                    android:text="税前工资(元)"
                     android:textSize="15dp"
                     android:gravity="center"/>
 
@@ -90,7 +90,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="2"
                     android:textColor="@color/colorLabText"
-                    android:text="个人社保"
+                    android:text="社保(元)"
                     android:textSize="15dp"
                     android:gravity="center" />
 
@@ -116,7 +116,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="2"
                     android:textColor="@color/colorLabText"
-                    android:text="个人公积金"
+                    android:text="公积金(元)"
                     android:textSize="15dp"
                     android:gravity="center" />
 
@@ -142,7 +142,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="2"
                     android:textColor="@color/colorLabText"
-                    android:text="个人所得税"
+                    android:text="所得税(元)"
                     android:textSize="15dp"
                     android:gravity="center" />
 
@@ -185,7 +185,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:textColor="@color/colorLabText"
-                android:text="个人缴纳金额:"
+                android:text="个人缴纳金额(元):"
                 android:textSize="16dp"
                 android:gravity="center"
                 />
@@ -213,7 +213,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:textColor="@color/colorLabText"
-                android:text="单位缴纳金额:"
+                android:text="单位缴纳金额(元):"
                 android:textSize="16dp"
                 android:gravity="center" />
 
@@ -260,7 +260,7 @@
                 android:padding="12dp"
                 android:gravity="center"
                 android:textColor="@color/colorLabText"
-                android:text="个人"
+                android:text="个人(元)"
                 android:textSize="15dp"
                 />
 
@@ -272,7 +272,7 @@
                 android:padding="12dp"
                 android:gravity="center"
                 android:textColor="@color/colorLabText"
-                android:text="单位"
+                android:text="单位(元)"
                 android:textSize="15dp"
                 />
 

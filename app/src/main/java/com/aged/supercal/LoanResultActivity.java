@@ -116,7 +116,7 @@ public class LoanResultActivity extends AppCompatActivity {
             String firstMonth = map_PerMonthPrincipalInterest.get(1)+"元";
             textView_firstMonth.setText(firstMonth);
         }else if(fangshi == 1){
-            textView_firstMonth.setText(perMonPrin_str);
+            textView_firstMonth.setText(perMonPrin_str+"元");
         }
 
 

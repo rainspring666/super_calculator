@@ -280,13 +280,21 @@ public class Digital_calculate extends AppCompatActivity implements View.OnClick
                 flag=true;//设置标识位
                 break;
             case R.id.btn_equal:   //等于
+
                   if(pending.length()>1){
                       InfixInToDuffix inf=new InfixInToDuffix();
                       String result;
                       try{
-                         // Toast.makeText(Digital_calculate.this, pending.toString(),Toast.LENGTH_SHORT).show();
                           String a=inf.toSuffix(pending);
                           result=inf.dealEquation(a);
+                          if(result.equals(inf.toSuffix(pending))){
+                              Toast.makeText(Digital_calculate.this, "结果是：" + result, Toast.LENGTH_SHORT).show();
+                              break;
+                          }
+
+                          if(result.equals("运算失败"))
+                              break;
+
                       }
                       catch(Exception ex) {
                           result="出错";
@@ -298,6 +306,7 @@ public class Digital_calculate extends AppCompatActivity implements View.OnClick
                       if(result.indexOf("0.")!=0 && result.indexOf("0")==0){
                           result="0";
                       }
+
 
                       if(flag==false){
                           if(result.matches("-[0-9]+(.[0-9]+)?|[0-9]+(.[0-9]+)?")){
@@ -369,10 +378,11 @@ public class Digital_calculate extends AppCompatActivity implements View.OnClick
     private boolean judge3(){      //0输入判断
 
         InfixInToDuffix inf1=new InfixInToDuffix();
-        if(inf1.toSuffix(pending).matches("-[0]+(.[0]+)?|[0]+(.[0]+)?"))
+        if(inf1.toSuffix(pending).matches("-[0]+([0]+)?|[0]+([0]+)?") )
             return false;
         return true;
     }     //0输入判断
+
     private boolean judge4(){      //0输入判断
         int last1 = 0;
         if (pending.length() != 0) {
@@ -380,10 +390,11 @@ public class Digital_calculate extends AppCompatActivity implements View.OnClick
         }
 
         InfixInToDuffix inf1=new InfixInToDuffix();
-        if(inf1.toSuffix(pending).matches("-[0]+(.[0]+)?|[0]+(.[0]+)?") && pending.indexOf(".1")!=-1)
+      //  if((inf1.toSuffix(pending)).compareTo("[0]"))
+        if(inf1.toSuffix(pending).matches("-[0]+([0]+)?|[0]+([0]+)?"))
             pending=pending.delete(pending.length()-1,pending.length());
             return true;
-    }     //0输入判断
+    }     //1-9输入判断
 
    //设置定时器
 
